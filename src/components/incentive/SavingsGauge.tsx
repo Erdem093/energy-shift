@@ -19,10 +19,10 @@ export default function SavingsGauge({ annualSavingGbp, maxSavingGbp, co2SavedKg
   const offset = circumference * (1 - progress);
 
   // Pick colour based on saving amount
-  const color = annualSavingGbp < 20 ? '#64748b'
-    : annualSavingGbp < 60 ? '#22d3ee'
-    : annualSavingGbp < 120 ? '#00fff5'
-    : '#4ade80';
+  const color = annualSavingGbp < 20 ? '#475569'
+    : annualSavingGbp < 60 ? '#94a3b8'
+    : annualSavingGbp < 120 ? '#f97316'
+    : '#fb923c';
 
   useEffect(() => {
     if (circleRef.current) {
@@ -37,7 +37,7 @@ export default function SavingsGauge({ annualSavingGbp, maxSavingGbp, co2SavedKg
           {/* Background ring */}
           <circle
             cx={size / 2} cy={size / 2} r={radius}
-            fill="none" stroke="#1e293b" strokeWidth={strokeWidth}
+            fill="none" stroke="#1a2540" strokeWidth={strokeWidth}
           />
           {/* Progress ring */}
           <circle
@@ -60,7 +60,7 @@ export default function SavingsGauge({ annualSavingGbp, maxSavingGbp, co2SavedKg
           </span>
           <span className="text-xs text-slate-500 mt-0.5">saved / year</span>
           {co2SavedKg > 0 && (
-            <span className="text-xs text-green-400 mt-1">{Math.round(co2SavedKg)} kg CO₂</span>
+            <span className="text-xs text-slate-500 mt-1">{Math.round(co2SavedKg)} kg CO₂</span>
           )}
         </div>
       </div>
@@ -68,7 +68,7 @@ export default function SavingsGauge({ annualSavingGbp, maxSavingGbp, co2SavedKg
       {annualSavingGbp > 0 && (
         <p className="text-xs text-slate-500 text-center">
           That&apos;s{' '}
-          <span className="text-cyan-400 font-medium">£{(annualSavingGbp / 12).toFixed(0)}/month</span>
+          <span className="text-slate-300 font-medium">£{(annualSavingGbp / 12).toFixed(0)}/month</span>
           {' '}back in your pocket
         </p>
       )}

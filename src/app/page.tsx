@@ -31,7 +31,7 @@ const UKRegionalMap = dynamic(() => import('@/components/map/UKRegionalMap'), {
 function SectionLabel({ index, label }: { index: string; label: string }) {
   return (
     <div className="flex items-center gap-3 mb-3">
-      <span className="font-mono text-[10px] text-blue-500/60 tracking-wider">{index}</span>
+      <span className="font-sans text-[10px] text-slate-700 tracking-widest">{index}</span>
       <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">{label}</span>
       <span className="flex-1 h-px bg-[#1a2540]" />
     </div>
@@ -87,14 +87,14 @@ export default function Home() {
         {/* ── Hero ── */}
         <section className="pt-10 pb-4">
           <div className="inline-flex items-center gap-2 border border-[#1a2540] bg-[#070d18] rounded-full px-4 py-1.5 text-[10px] font-mono text-slate-500 mb-6 tracking-wider uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse flex-shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-pulse flex-shrink-0" />
             Real-time · Carbon Intensity API · Elexon BMRS
           </div>
 
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-4 leading-none">
             UK Energy
             <br />
-            <span className="text-blue-400">Demand Shift</span>
+            <span className="text-slate-300">Demand Shift</span>
           </h1>
 
           <p className="text-slate-400 text-base max-w-xl mb-8 leading-relaxed">
@@ -105,10 +105,10 @@ export default function Home() {
           {/* Key stats row */}
           <div className="flex flex-wrap gap-px border border-[#1a2540] rounded-xl overflow-hidden w-fit bg-[#1a2540] mb-8">
             {[
-              { value: '44.7', unit: 'GW', label: 'winter peak', color: 'text-blue-400' },
-              { value: '5×', unit: '', label: 'price differential', color: 'text-amber-400' },
-              { value: '£190', unit: '/yr', label: 'max saving', color: 'text-emerald-400' },
-              { value: '14', unit: '', label: 'DNO regions', color: 'text-slate-300' },
+              { value: '44.7', unit: 'GW', label: 'winter peak', color: 'text-white' },
+              { value: '5×', unit: '', label: 'price differential', color: 'text-white' },
+              { value: '£190', unit: '/yr', label: 'max saving', color: 'text-white' },
+              { value: '14', unit: '', label: 'DNO regions', color: 'text-slate-400' },
             ].map(s => (
               <div key={s.label} className="bg-[#070d18] px-5 py-3 text-center min-w-[90px]">
                 <p className={`font-mono font-bold text-xl tabular-nums ${s.color}`}>
@@ -230,7 +230,7 @@ export default function Home() {
           <GlassCard className="p-6 sm:p-8" glow="none">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
               <div>
-                <h3 className="text-blue-400 font-semibold mb-2 text-sm">Why peak demand matters</h3>
+                <h3 className="text-slate-200 font-semibold mb-2 text-sm">Why peak demand matters</h3>
                 <p className="text-slate-500 leading-relaxed text-xs">
                   UK winter evening demand peaks at 44+ GW — nearly double the overnight minimum.
                   The marginal generators brought online to meet this peak are the dirtiest and most expensive.
@@ -238,7 +238,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h3 className="text-amber-400 font-semibold mb-2 text-sm">The commercial case for shifting</h3>
+                <h3 className="text-slate-200 font-semibold mb-2 text-sm">The commercial case for shifting</h3>
                 <p className="text-slate-500 leading-relaxed text-xs">
                   On Agile Octopus, peak (16:00–19:00) costs 35p/kWh vs 7p overnight — a 5× differential.
                   A comfortable household shifting just 20% of peak load saves ~£38/year with no capital cost.
@@ -246,7 +246,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h3 className="text-emerald-400 font-semibold mb-2 text-sm">Grid-scale impact</h3>
+                <h3 className="text-slate-200 font-semibold mb-2 text-sm">Grid-scale impact</h3>
                 <p className="text-slate-500 leading-relaxed text-xs">
                   If 10% of UK households shifted 30% of peak load, it would reduce grid peak demand by
                   ~500 MW — equivalent to a mid-sized gas peaker plant that would otherwise run for
@@ -261,7 +261,7 @@ export default function Home() {
         {!regionalData && (
           <div className="flex items-center justify-center py-40">
             <div className="text-center space-y-4">
-              <div className="w-8 h-8 border border-blue-500/30 border-t-blue-500 rounded-full animate-spin mx-auto" />
+              <div className="w-8 h-8 border border-slate-700 border-t-slate-400 rounded-full animate-spin mx-auto" />
               <p className="font-mono text-xs text-slate-600 tracking-wider">LOADING ENERGY DATA</p>
             </div>
           </div>

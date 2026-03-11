@@ -27,9 +27,9 @@ export default function StatsBar({ snapshot, peakSavingGbp }: StatsBarProps) {
         {/* Brand */}
         <div className="flex items-center gap-3 flex-shrink-0">
           <div className="flex items-center gap-1.5">
-            <span className="w-1 h-4 bg-blue-500 rounded-sm flex-shrink-0" />
-            <span className="font-mono font-bold text-sm text-white tracking-tight">
-              ENERGY<span className="text-blue-400">SHIFT</span>
+            <span className="w-1 h-4 bg-white/20 rounded-sm flex-shrink-0" />
+            <span className="font-sans font-black text-sm text-white tracking-tight">
+              ENERGY<span className="text-white/50">SHIFT</span>
             </span>
           </div>
           <span className="hidden md:block text-[#1a2540] select-none">│</span>
@@ -56,12 +56,12 @@ export default function StatsBar({ snapshot, peakSavingGbp }: StatsBarProps) {
 
           <div className="flex items-center gap-2 px-3 h-10">
             <span className="hidden sm:block text-[10px] uppercase tracking-wider text-slate-600">Renewable</span>
-            <span className="font-mono text-xs font-semibold text-emerald-400">{renewablePct.toFixed(1)}%</span>
+            <span className="font-mono text-xs font-semibold text-slate-200">{renewablePct.toFixed(1)}%</span>
           </div>
 
           <div className="hidden sm:flex items-center gap-2 px-3 h-10">
             <span className="text-[10px] uppercase tracking-wider text-slate-600">Peak saving</span>
-            <span className="font-mono text-xs font-semibold text-amber-400">£{Math.round(peakSavingGbp)}/yr</span>
+            <span className="font-mono text-xs font-semibold text-slate-200">£{Math.round(peakSavingGbp)}/yr</span>
           </div>
 
           <div className="flex items-center gap-2 px-3 h-10">

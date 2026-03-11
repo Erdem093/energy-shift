@@ -48,18 +48,18 @@ export default function ShiftImpactBreakdown({
       label: 'Annual saving',
       value: `£${Math.round(annualSavingGbp)}`,
       sub: `${savingPct.toFixed(0)}% off your bill`,
-      valueColor: 'text-blue-400',
-      iconColor: 'text-blue-500',
-      accentBorder: 'border-l-blue-500/50',
+      valueColor: 'text-white',
+      iconColor: 'text-slate-500',
+      accentBorder: 'border-l-orange-500/40',
     },
     {
       Icon: IconLeaf,
       label: 'CO₂ avoided',
       value: `${Math.round(co2SavedKg)} kg`,
       sub: trees > 0 ? `≈ ${trees} tree${trees > 1 ? 's' : ''} planted` : 'per year',
-      valueColor: 'text-emerald-400',
-      iconColor: 'text-emerald-500',
-      accentBorder: 'border-l-emerald-500/50',
+      valueColor: 'text-white',
+      iconColor: 'text-slate-500',
+      accentBorder: 'border-l-slate-500/40',
     },
     {
       Icon: IconBolt,
@@ -68,9 +68,9 @@ export default function ShiftImpactBreakdown({
         ? `${(gridPeakReductionMW / 1000).toFixed(1)} GW`
         : `${Math.round(gridPeakReductionMW)} MW`,
       sub: 'if 10% of UK homes shift',
-      valueColor: 'text-violet-400',
-      iconColor: 'text-violet-500',
-      accentBorder: 'border-l-violet-500/50',
+      valueColor: 'text-white',
+      iconColor: 'text-slate-500',
+      accentBorder: 'border-l-slate-500/40',
     },
   ];
 

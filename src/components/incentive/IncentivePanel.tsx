@@ -63,17 +63,17 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
               className={clsx(
                 'text-left p-4 rounded-xl border-l-2 border border-[#1a2540] transition-all duration-200',
                 archetype === a
-                  ? 'bg-[#0c1a2e] border-l-blue-500 border-[#1a2540]'
-                  : 'bg-[#0c1525] border-l-transparent hover:border-l-[#2a3f60] hover:border-[#243556]',
+                  ? 'bg-[#131820] border-l-white/40 border-[#1a2540]'
+                  : 'bg-[#0c1525] border-l-transparent hover:border-l-slate-600 hover:border-[#243556]',
               )}
             >
-              <p className={clsx('font-semibold text-sm mb-1', archetype === a ? 'text-blue-300' : 'text-slate-400')}>
+              <p className={clsx('font-semibold text-sm mb-1', archetype === a ? 'text-white' : 'text-slate-400')}>
                 {ARCHETYPE_LABELS[a]}
               </p>
               <p className="text-xs text-slate-600">{ARCHETYPE_DESCRIPTIONS[a]}</p>
               <p className="text-xs mt-2 font-mono">
                 <span className="text-slate-700">Baseline: </span>
-                <span className={archetype === a ? 'text-blue-400' : 'text-slate-500'}>
+                <span className={archetype === a ? 'text-slate-300' : 'text-slate-500'}>
                   £{data.archetypes[a].baselineCostGbp.toFixed(0)}/yr
                 </span>
               </p>
@@ -86,7 +86,7 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
       <div>
         <div className="flex justify-between items-end mb-3">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-600">Peak load shifted to off-peak</p>
-          <span className="text-2xl font-mono font-bold text-blue-400 tabular-nums">{shiftPct}%</span>
+          <span className="text-2xl font-mono font-bold text-white tabular-nums">{shiftPct}%</span>
         </div>
 
         <input
@@ -98,7 +98,7 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
           onChange={(e) => setShiftPct(Number(e.target.value))}
           className="w-full"
           style={{
-            background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${shiftPct}%, #0c1525 ${shiftPct}%, #0c1525 100%)`,
+            background: `linear-gradient(to right, #f97316 0%, #f97316 ${shiftPct}%, #0c1525 ${shiftPct}%, #0c1525 100%)`,
           }}
         />
 
@@ -113,7 +113,7 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
           {shiftedKwhDay > 0 && (
             <span className="text-slate-600 not-italic font-mono">
               {' '}—{' '}
-              <span className="text-blue-400">{shiftedKwhDay.toFixed(2)} kWh/day</span> moved off-peak
+              <span className="text-slate-400">{shiftedKwhDay.toFixed(2)} kWh/day</span> moved off-peak
             </span>
           )}
         </p>

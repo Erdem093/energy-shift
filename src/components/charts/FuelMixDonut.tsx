@@ -88,7 +88,7 @@ export default function FuelMixDonut({ data }: FuelMixDonutProps) {
 
         {/* Centre text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <span className="text-2xl font-mono font-bold text-emerald-400">{renewables.toFixed(0)}%</span>
+          <span className="text-2xl font-mono font-bold text-white">{renewables.toFixed(0)}%</span>
           <span className="text-[10px] text-slate-500 mt-0.5 uppercase tracking-wider">renewable</span>
           <span className="text-[10px] text-slate-600 mt-0.5 font-mono">{lowCarbon.toFixed(0)}% low-C</span>
         </div>

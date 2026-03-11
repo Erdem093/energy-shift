@@ -11,10 +11,10 @@ interface GlassCardProps {
 }
 
 const accentBorders: Record<string, string> = {
-  cyan:  'border-l-cyan-500/50',
-  amber: 'border-l-amber-500/50',
-  red:   'border-l-red-500/50',
-  green: 'border-l-emerald-500/50',
+  cyan:  'border-l-slate-500/40',
+  amber: 'border-l-slate-500/40',
+  red:   'border-l-red-500/40',
+  green: 'border-l-slate-500/40',
   none:  'border-l-[#1a2540]',
 };
 
