@@ -133,37 +133,36 @@ export default function Home() {
         {regionalData && fuelData && (
           <section>
             <SectionLabel index="// 01" label="Regional Carbon Intensity" />
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4">
 
-              <GlassCard className="p-5" glow="cyan">
-                <div className="flex items-center justify-between mb-4">
+              {/* Map card */}
+              <GlassCard className="p-4" glow="none">
+                <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     14 DNO Regions · Annual average
                   </span>
                   <span className="font-mono text-[10px] text-slate-600">gCO₂/kWh</span>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-[1fr_200px] gap-4">
-                  <div>
-                    <UKRegionalMap
-                      data={regionalData}
-                      selectedRegionId={selectedRegionId}
-                      onRegionSelect={handleRegionSelect}
-                    />
-                    <MapLegend />
-                  </div>
-                  <div className="bg-[#0c1525] border border-[#1a2540] rounded-lg overflow-hidden">
-                    <RegionTooltip region={selectedRegion} />
-                  </div>
-                </div>
+                <UKRegionalMap
+                  data={regionalData}
+                  selectedRegionId={selectedRegionId}
+                  onRegionSelect={handleRegionSelect}
+                />
+                <MapLegend />
               </GlassCard>
 
-              <GlassCard className="p-5" glow="green">
-                <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-4">
-                  GB Generation Mix
+              {/* Right sidebar: Fuel Mix on top, Region Tooltip below */}
+              <div className="flex flex-col gap-4">
+                <GlassCard className="p-4" glow="none">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-3">
+                    GB Generation Mix
+                  </div>
+                  <FuelMixDonut data={fuelData} />
+                </GlassCard>
+                <div className="bg-[#0c1525] border border-[#1a2540] rounded-xl overflow-hidden flex-1">
+                  <RegionTooltip region={selectedRegion} />
                 </div>
-                <FuelMixDonut data={fuelData} />
-              </GlassCard>
+              </div>
 
             </div>
           </section>
