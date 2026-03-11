@@ -33,7 +33,7 @@ export default function SavingsGauge({ annualSavingGbp, maxSavingGbp, co2SavedKg
   return (
     <div className="flex flex-col items-center gap-3">
       <div className="relative">
-        <svg width={size} height={size} className="rotate-[-90deg]">
+        <svg width={size} height={size} className="rotate-[-90deg]" style={{ overflow: 'visible' }}>
           {/* Background ring */}
           <circle
             cx={size / 2} cy={size / 2} r={radius}

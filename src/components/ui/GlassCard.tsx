@@ -11,10 +11,10 @@ interface GlassCardProps {
 }
 
 const glowStyles = {
-  cyan:  'shadow-[0_0_30px_rgba(0,255,245,0.08)] border-cyan-500/20 hover:border-cyan-400/40 hover:shadow-[0_0_40px_rgba(0,255,245,0.12)]',
-  amber: 'shadow-[0_0_30px_rgba(245,158,11,0.08)] border-amber-500/20 hover:border-amber-400/40',
-  red:   'shadow-[0_0_30px_rgba(239,68,68,0.08)] border-red-500/20',
-  green: 'shadow-[0_0_30px_rgba(74,222,128,0.08)] border-green-500/20',
+  cyan:  'border-cyan-500/15 hover:border-cyan-400/30',
+  amber: 'border-amber-500/15 hover:border-amber-400/30',
+  red:   'border-red-500/15',
+  green: 'border-green-500/15 hover:border-green-400/30',
   none:  'border-slate-700/40',
 };
 

@@ -19,7 +19,7 @@ export default function GlowDot({ color = 'cyan', size = 'sm' }: GlowDotProps) {
 
   return (
     <span className="relative inline-flex items-center justify-center flex-shrink-0">
-      <span className={`absolute ${ringSz} rounded-full ${c.ring} animate-ping`} />
+      <span className={`absolute ${ringSz} rounded-full ${c.ring} animate-pulse`} />
       <span className={`relative ${sz} rounded-full ${c.dot}`} style={{ boxShadow: c.shadow }} />
     </span>
   );
