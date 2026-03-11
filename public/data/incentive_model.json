@@ -1,0 +1,1857 @@
+{
+  "generatedAt": "2026-03-11T16:30:10Z",
+  "tariff": {
+    "name": "Agile Octopus (representative)",
+    "peakRatePence": 35.0,
+    "shoulderRatePence": 20.0,
+    "offpeakRatePence": 7.0,
+    "standingChargePence": 61.64,
+    "peakWindow": "16:00-19:00",
+    "offpeakWindow": "00:00-07:00"
+  },
+  "assumptions": {
+    "peakCarbonIntensityGCO2kWh": 250.0,
+    "offpeakCarbonIntensityGCO2kWh": 95.0,
+    "ukHouseholds": 28000000,
+    "agileAdoptionRate": 0.1,
+    "nationalScaleNote": "Grid impact assumes 10% of 28M UK households on ToU tariff"
+  },
+  "archetypes": {
+    "comfortable": {
+      "annualKwh": 3100,
+      "baselineCostGbp": 845.8,
+      "shiftSavings": [
+        {
+          "shiftPct": 0,
+          "annualSavingGbp": 0.0,
+          "co2SavedKg": 0.0,
+          "gridPeakReductionMW": 0.0
+        },
+        {
+          "shiftPct": 1,
+          "annualSavingGbp": 1.9,
+          "co2SavedKg": 1.1,
+          "gridPeakReductionMW": 17.0
+        },
+        {
+          "shiftPct": 2,
+          "annualSavingGbp": 3.81,
+          "co2SavedKg": 2.1,
+          "gridPeakReductionMW": 35.0
+        },
+        {
+          "shiftPct": 3,
+          "annualSavingGbp": 5.71,
+          "co2SavedKg": 3.2,
+          "gridPeakReductionMW": 52.0
+        },
+        {
+          "shiftPct": 4,
+          "annualSavingGbp": 7.61,
+          "co2SavedKg": 4.2,
+          "gridPeakReductionMW": 70.0
+        },
+        {
+          "shiftPct": 5,
+          "annualSavingGbp": 9.52,
+          "co2SavedKg": 5.3,
+          "gridPeakReductionMW": 87.0
+        },
+        {
+          "shiftPct": 6,
+          "annualSavingGbp": 11.42,
+          "co2SavedKg": 6.3,
+          "gridPeakReductionMW": 104.0
+        },
+        {
+          "shiftPct": 7,
+          "annualSavingGbp": 13.33,
+          "co2SavedKg": 7.4,
+          "gridPeakReductionMW": 122.0
+        },
+        {
+          "shiftPct": 8,
+          "annualSavingGbp": 15.23,
+          "co2SavedKg": 8.4,
+          "gridPeakReductionMW": 139.0
+        },
+        {
+          "shiftPct": 9,
+          "annualSavingGbp": 17.14,
+          "co2SavedKg": 9.5,
+          "gridPeakReductionMW": 157.0
+        },
+        {
+          "shiftPct": 10,
+          "annualSavingGbp": 19.04,
+          "co2SavedKg": 10.5,
+          "gridPeakReductionMW": 174.0
+        },
+        {
+          "shiftPct": 11,
+          "annualSavingGbp": 20.95,
+          "co2SavedKg": 11.6,
+          "gridPeakReductionMW": 191.0
+        },
+        {
+          "shiftPct": 12,
+          "annualSavingGbp": 22.85,
+          "co2SavedKg": 12.7,
+          "gridPeakReductionMW": 209.0
+        },
+        {
+          "shiftPct": 13,
+          "annualSavingGbp": 24.75,
+          "co2SavedKg": 13.7,
+          "gridPeakReductionMW": 226.0
+        },
+        {
+          "shiftPct": 14,
+          "annualSavingGbp": 26.66,
+          "co2SavedKg": 14.8,
+          "gridPeakReductionMW": 243.0
+        },
+        {
+          "shiftPct": 15,
+          "annualSavingGbp": 28.56,
+          "co2SavedKg": 15.8,
+          "gridPeakReductionMW": 261.0
+        },
+        {
+          "shiftPct": 16,
+          "annualSavingGbp": 30.47,
+          "co2SavedKg": 16.9,
+          "gridPeakReductionMW": 278.0
+        },
+        {
+          "shiftPct": 17,
+          "annualSavingGbp": 32.37,
+          "co2SavedKg": 17.9,
+          "gridPeakReductionMW": 296.0
+        },
+        {
+          "shiftPct": 18,
+          "annualSavingGbp": 34.28,
+          "co2SavedKg": 19.0,
+          "gridPeakReductionMW": 313.0
+        },
+        {
+          "shiftPct": 19,
+          "annualSavingGbp": 36.18,
+          "co2SavedKg": 20.0,
+          "gridPeakReductionMW": 330.0
+        },
+        {
+          "shiftPct": 20,
+          "annualSavingGbp": 38.09,
+          "co2SavedKg": 21.1,
+          "gridPeakReductionMW": 348.0
+        },
+        {
+          "shiftPct": 21,
+          "annualSavingGbp": 39.99,
+          "co2SavedKg": 22.1,
+          "gridPeakReductionMW": 365.0
+        },
+        {
+          "shiftPct": 22,
+          "annualSavingGbp": 41.89,
+          "co2SavedKg": 23.2,
+          "gridPeakReductionMW": 383.0
+        },
+        {
+          "shiftPct": 23,
+          "annualSavingGbp": 43.8,
+          "co2SavedKg": 24.2,
+          "gridPeakReductionMW": 400.0
+        },
+        {
+          "shiftPct": 24,
+          "annualSavingGbp": 45.7,
+          "co2SavedKg": 25.3,
+          "gridPeakReductionMW": 417.0
+        },
+        {
+          "shiftPct": 25,
+          "annualSavingGbp": 47.61,
+          "co2SavedKg": 26.4,
+          "gridPeakReductionMW": 435.0
+        },
+        {
+          "shiftPct": 26,
+          "annualSavingGbp": 49.51,
+          "co2SavedKg": 27.4,
+          "gridPeakReductionMW": 452.0
+        },
+        {
+          "shiftPct": 27,
+          "annualSavingGbp": 51.42,
+          "co2SavedKg": 28.5,
+          "gridPeakReductionMW": 470.0
+        },
+        {
+          "shiftPct": 28,
+          "annualSavingGbp": 53.32,
+          "co2SavedKg": 29.5,
+          "gridPeakReductionMW": 487.0
+        },
+        {
+          "shiftPct": 29,
+          "annualSavingGbp": 55.22,
+          "co2SavedKg": 30.6,
+          "gridPeakReductionMW": 504.0
+        },
+        {
+          "shiftPct": 30,
+          "annualSavingGbp": 57.13,
+          "co2SavedKg": 31.6,
+          "gridPeakReductionMW": 522.0
+        },
+        {
+          "shiftPct": 31,
+          "annualSavingGbp": 59.03,
+          "co2SavedKg": 32.7,
+          "gridPeakReductionMW": 539.0
+        },
+        {
+          "shiftPct": 32,
+          "annualSavingGbp": 60.94,
+          "co2SavedKg": 33.7,
+          "gridPeakReductionMW": 557.0
+        },
+        {
+          "shiftPct": 33,
+          "annualSavingGbp": 62.84,
+          "co2SavedKg": 34.8,
+          "gridPeakReductionMW": 574.0
+        },
+        {
+          "shiftPct": 34,
+          "annualSavingGbp": 64.75,
+          "co2SavedKg": 35.8,
+          "gridPeakReductionMW": 591.0
+        },
+        {
+          "shiftPct": 35,
+          "annualSavingGbp": 66.65,
+          "co2SavedKg": 36.9,
+          "gridPeakReductionMW": 609.0
+        },
+        {
+          "shiftPct": 36,
+          "annualSavingGbp": 68.56,
+          "co2SavedKg": 38.0,
+          "gridPeakReductionMW": 626.0
+        },
+        {
+          "shiftPct": 37,
+          "annualSavingGbp": 70.46,
+          "co2SavedKg": 39.0,
+          "gridPeakReductionMW": 643.0
+        },
+        {
+          "shiftPct": 38,
+          "annualSavingGbp": 72.36,
+          "co2SavedKg": 40.1,
+          "gridPeakReductionMW": 661.0
+        },
+        {
+          "shiftPct": 39,
+          "annualSavingGbp": 74.27,
+          "co2SavedKg": 41.1,
+          "gridPeakReductionMW": 678.0
+        },
+        {
+          "shiftPct": 40,
+          "annualSavingGbp": 76.17,
+          "co2SavedKg": 42.2,
+          "gridPeakReductionMW": 696.0
+        },
+        {
+          "shiftPct": 41,
+          "annualSavingGbp": 78.08,
+          "co2SavedKg": 43.2,
+          "gridPeakReductionMW": 713.0
+        },
+        {
+          "shiftPct": 42,
+          "annualSavingGbp": 79.98,
+          "co2SavedKg": 44.3,
+          "gridPeakReductionMW": 730.0
+        },
+        {
+          "shiftPct": 43,
+          "annualSavingGbp": 81.89,
+          "co2SavedKg": 45.3,
+          "gridPeakReductionMW": 748.0
+        },
+        {
+          "shiftPct": 44,
+          "annualSavingGbp": 83.79,
+          "co2SavedKg": 46.4,
+          "gridPeakReductionMW": 765.0
+        },
+        {
+          "shiftPct": 45,
+          "annualSavingGbp": 85.7,
+          "co2SavedKg": 47.4,
+          "gridPeakReductionMW": 783.0
+        },
+        {
+          "shiftPct": 46,
+          "annualSavingGbp": 87.6,
+          "co2SavedKg": 48.5,
+          "gridPeakReductionMW": 800.0
+        },
+        {
+          "shiftPct": 47,
+          "annualSavingGbp": 89.5,
+          "co2SavedKg": 49.5,
+          "gridPeakReductionMW": 817.0
+        },
+        {
+          "shiftPct": 48,
+          "annualSavingGbp": 91.41,
+          "co2SavedKg": 50.6,
+          "gridPeakReductionMW": 835.0
+        },
+        {
+          "shiftPct": 49,
+          "annualSavingGbp": 93.31,
+          "co2SavedKg": 51.7,
+          "gridPeakReductionMW": 852.0
+        },
+        {
+          "shiftPct": 50,
+          "annualSavingGbp": 95.22,
+          "co2SavedKg": 52.7,
+          "gridPeakReductionMW": 870.0
+        },
+        {
+          "shiftPct": 51,
+          "annualSavingGbp": 97.12,
+          "co2SavedKg": 53.8,
+          "gridPeakReductionMW": 887.0
+        },
+        {
+          "shiftPct": 52,
+          "annualSavingGbp": 99.03,
+          "co2SavedKg": 54.8,
+          "gridPeakReductionMW": 904.0
+        },
+        {
+          "shiftPct": 53,
+          "annualSavingGbp": 100.93,
+          "co2SavedKg": 55.9,
+          "gridPeakReductionMW": 922.0
+        },
+        {
+          "shiftPct": 54,
+          "annualSavingGbp": 102.84,
+          "co2SavedKg": 56.9,
+          "gridPeakReductionMW": 939.0
+        },
+        {
+          "shiftPct": 55,
+          "annualSavingGbp": 104.74,
+          "co2SavedKg": 58.0,
+          "gridPeakReductionMW": 957.0
+        },
+        {
+          "shiftPct": 56,
+          "annualSavingGbp": 106.64,
+          "co2SavedKg": 59.0,
+          "gridPeakReductionMW": 974.0
+        },
+        {
+          "shiftPct": 57,
+          "annualSavingGbp": 108.55,
+          "co2SavedKg": 60.1,
+          "gridPeakReductionMW": 991.0
+        },
+        {
+          "shiftPct": 58,
+          "annualSavingGbp": 110.45,
+          "co2SavedKg": 61.1,
+          "gridPeakReductionMW": 1009.0
+        },
+        {
+          "shiftPct": 59,
+          "annualSavingGbp": 112.36,
+          "co2SavedKg": 62.2,
+          "gridPeakReductionMW": 1026.0
+        },
+        {
+          "shiftPct": 60,
+          "annualSavingGbp": 114.26,
+          "co2SavedKg": 63.3,
+          "gridPeakReductionMW": 1044.0
+        },
+        {
+          "shiftPct": 61,
+          "annualSavingGbp": 116.17,
+          "co2SavedKg": 64.3,
+          "gridPeakReductionMW": 1061.0
+        },
+        {
+          "shiftPct": 62,
+          "annualSavingGbp": 118.07,
+          "co2SavedKg": 65.4,
+          "gridPeakReductionMW": 1078.0
+        },
+        {
+          "shiftPct": 63,
+          "annualSavingGbp": 119.97,
+          "co2SavedKg": 66.4,
+          "gridPeakReductionMW": 1096.0
+        },
+        {
+          "shiftPct": 64,
+          "annualSavingGbp": 121.88,
+          "co2SavedKg": 67.5,
+          "gridPeakReductionMW": 1113.0
+        },
+        {
+          "shiftPct": 65,
+          "annualSavingGbp": 123.78,
+          "co2SavedKg": 68.5,
+          "gridPeakReductionMW": 1130.0
+        },
+        {
+          "shiftPct": 66,
+          "annualSavingGbp": 125.69,
+          "co2SavedKg": 69.6,
+          "gridPeakReductionMW": 1148.0
+        },
+        {
+          "shiftPct": 67,
+          "annualSavingGbp": 127.59,
+          "co2SavedKg": 70.6,
+          "gridPeakReductionMW": 1165.0
+        },
+        {
+          "shiftPct": 68,
+          "annualSavingGbp": 129.5,
+          "co2SavedKg": 71.7,
+          "gridPeakReductionMW": 1183.0
+        },
+        {
+          "shiftPct": 69,
+          "annualSavingGbp": 131.4,
+          "co2SavedKg": 72.7,
+          "gridPeakReductionMW": 1200.0
+        },
+        {
+          "shiftPct": 70,
+          "annualSavingGbp": 133.31,
+          "co2SavedKg": 73.8,
+          "gridPeakReductionMW": 1217.0
+        },
+        {
+          "shiftPct": 71,
+          "annualSavingGbp": 135.21,
+          "co2SavedKg": 74.9,
+          "gridPeakReductionMW": 1235.0
+        },
+        {
+          "shiftPct": 72,
+          "annualSavingGbp": 137.11,
+          "co2SavedKg": 75.9,
+          "gridPeakReductionMW": 1252.0
+        },
+        {
+          "shiftPct": 73,
+          "annualSavingGbp": 139.02,
+          "co2SavedKg": 77.0,
+          "gridPeakReductionMW": 1270.0
+        },
+        {
+          "shiftPct": 74,
+          "annualSavingGbp": 140.92,
+          "co2SavedKg": 78.0,
+          "gridPeakReductionMW": 1287.0
+        },
+        {
+          "shiftPct": 75,
+          "annualSavingGbp": 142.83,
+          "co2SavedKg": 79.1,
+          "gridPeakReductionMW": 1304.0
+        },
+        {
+          "shiftPct": 76,
+          "annualSavingGbp": 144.73,
+          "co2SavedKg": 80.1,
+          "gridPeakReductionMW": 1322.0
+        },
+        {
+          "shiftPct": 77,
+          "annualSavingGbp": 146.64,
+          "co2SavedKg": 81.2,
+          "gridPeakReductionMW": 1339.0
+        },
+        {
+          "shiftPct": 78,
+          "annualSavingGbp": 148.54,
+          "co2SavedKg": 82.2,
+          "gridPeakReductionMW": 1357.0
+        },
+        {
+          "shiftPct": 79,
+          "annualSavingGbp": 150.45,
+          "co2SavedKg": 83.3,
+          "gridPeakReductionMW": 1374.0
+        },
+        {
+          "shiftPct": 80,
+          "annualSavingGbp": 152.35,
+          "co2SavedKg": 84.3,
+          "gridPeakReductionMW": 1391.0
+        },
+        {
+          "shiftPct": 81,
+          "annualSavingGbp": 154.25,
+          "co2SavedKg": 85.4,
+          "gridPeakReductionMW": 1409.0
+        },
+        {
+          "shiftPct": 82,
+          "annualSavingGbp": 156.16,
+          "co2SavedKg": 86.4,
+          "gridPeakReductionMW": 1426.0
+        },
+        {
+          "shiftPct": 83,
+          "annualSavingGbp": 158.06,
+          "co2SavedKg": 87.5,
+          "gridPeakReductionMW": 1444.0
+        },
+        {
+          "shiftPct": 84,
+          "annualSavingGbp": 159.97,
+          "co2SavedKg": 88.6,
+          "gridPeakReductionMW": 1461.0
+        },
+        {
+          "shiftPct": 85,
+          "annualSavingGbp": 161.87,
+          "co2SavedKg": 89.6,
+          "gridPeakReductionMW": 1478.0
+        },
+        {
+          "shiftPct": 86,
+          "annualSavingGbp": 163.78,
+          "co2SavedKg": 90.7,
+          "gridPeakReductionMW": 1496.0
+        },
+        {
+          "shiftPct": 87,
+          "annualSavingGbp": 165.68,
+          "co2SavedKg": 91.7,
+          "gridPeakReductionMW": 1513.0
+        },
+        {
+          "shiftPct": 88,
+          "annualSavingGbp": 167.59,
+          "co2SavedKg": 92.8,
+          "gridPeakReductionMW": 1530.0
+        },
+        {
+          "shiftPct": 89,
+          "annualSavingGbp": 169.49,
+          "co2SavedKg": 93.8,
+          "gridPeakReductionMW": 1548.0
+        },
+        {
+          "shiftPct": 90,
+          "annualSavingGbp": 171.39,
+          "co2SavedKg": 94.9,
+          "gridPeakReductionMW": 1565.0
+        },
+        {
+          "shiftPct": 91,
+          "annualSavingGbp": 173.3,
+          "co2SavedKg": 95.9,
+          "gridPeakReductionMW": 1583.0
+        },
+        {
+          "shiftPct": 92,
+          "annualSavingGbp": 175.2,
+          "co2SavedKg": 97.0,
+          "gridPeakReductionMW": 1600.0
+        },
+        {
+          "shiftPct": 93,
+          "annualSavingGbp": 177.11,
+          "co2SavedKg": 98.0,
+          "gridPeakReductionMW": 1617.0
+        },
+        {
+          "shiftPct": 94,
+          "annualSavingGbp": 179.01,
+          "co2SavedKg": 99.1,
+          "gridPeakReductionMW": 1635.0
+        },
+        {
+          "shiftPct": 95,
+          "annualSavingGbp": 180.92,
+          "co2SavedKg": 100.2,
+          "gridPeakReductionMW": 1652.0
+        },
+        {
+          "shiftPct": 96,
+          "annualSavingGbp": 182.82,
+          "co2SavedKg": 101.2,
+          "gridPeakReductionMW": 1670.0
+        },
+        {
+          "shiftPct": 97,
+          "annualSavingGbp": 184.72,
+          "co2SavedKg": 102.3,
+          "gridPeakReductionMW": 1687.0
+        },
+        {
+          "shiftPct": 98,
+          "annualSavingGbp": 186.63,
+          "co2SavedKg": 103.3,
+          "gridPeakReductionMW": 1704.0
+        },
+        {
+          "shiftPct": 99,
+          "annualSavingGbp": 188.53,
+          "co2SavedKg": 104.4,
+          "gridPeakReductionMW": 1722.0
+        },
+        {
+          "shiftPct": 100,
+          "annualSavingGbp": 190.44,
+          "co2SavedKg": 105.4,
+          "gridPeakReductionMW": 1739.0
+        }
+      ]
+    },
+    "affluent": {
+      "annualKwh": 4200,
+      "baselineCostGbp": 1037.22,
+      "shiftSavings": [
+        {
+          "shiftPct": 0,
+          "annualSavingGbp": 0.0,
+          "co2SavedKg": 0.0,
+          "gridPeakReductionMW": 0.0
+        },
+        {
+          "shiftPct": 1,
+          "annualSavingGbp": 2.38,
+          "co2SavedKg": 1.3,
+          "gridPeakReductionMW": 22.0
+        },
+        {
+          "shiftPct": 2,
+          "annualSavingGbp": 4.76,
+          "co2SavedKg": 2.6,
+          "gridPeakReductionMW": 43.0
+        },
+        {
+          "shiftPct": 3,
+          "annualSavingGbp": 7.14,
+          "co2SavedKg": 4.0,
+          "gridPeakReductionMW": 65.0
+        },
+        {
+          "shiftPct": 4,
+          "annualSavingGbp": 9.52,
+          "co2SavedKg": 5.3,
+          "gridPeakReductionMW": 87.0
+        },
+        {
+          "shiftPct": 5,
+          "annualSavingGbp": 11.9,
+          "co2SavedKg": 6.6,
+          "gridPeakReductionMW": 109.0
+        },
+        {
+          "shiftPct": 6,
+          "annualSavingGbp": 14.28,
+          "co2SavedKg": 7.9,
+          "gridPeakReductionMW": 130.0
+        },
+        {
+          "shiftPct": 7,
+          "annualSavingGbp": 16.66,
+          "co2SavedKg": 9.2,
+          "gridPeakReductionMW": 152.0
+        },
+        {
+          "shiftPct": 8,
+          "annualSavingGbp": 19.04,
+          "co2SavedKg": 10.5,
+          "gridPeakReductionMW": 174.0
+        },
+        {
+          "shiftPct": 9,
+          "annualSavingGbp": 21.42,
+          "co2SavedKg": 11.9,
+          "gridPeakReductionMW": 196.0
+        },
+        {
+          "shiftPct": 10,
+          "annualSavingGbp": 23.8,
+          "co2SavedKg": 13.2,
+          "gridPeakReductionMW": 217.0
+        },
+        {
+          "shiftPct": 11,
+          "annualSavingGbp": 26.18,
+          "co2SavedKg": 14.5,
+          "gridPeakReductionMW": 239.0
+        },
+        {
+          "shiftPct": 12,
+          "annualSavingGbp": 28.56,
+          "co2SavedKg": 15.8,
+          "gridPeakReductionMW": 261.0
+        },
+        {
+          "shiftPct": 13,
+          "annualSavingGbp": 30.94,
+          "co2SavedKg": 17.1,
+          "gridPeakReductionMW": 283.0
+        },
+        {
+          "shiftPct": 14,
+          "annualSavingGbp": 33.32,
+          "co2SavedKg": 18.4,
+          "gridPeakReductionMW": 304.0
+        },
+        {
+          "shiftPct": 15,
+          "annualSavingGbp": 35.7,
+          "co2SavedKg": 19.8,
+          "gridPeakReductionMW": 326.0
+        },
+        {
+          "shiftPct": 16,
+          "annualSavingGbp": 38.08,
+          "co2SavedKg": 21.1,
+          "gridPeakReductionMW": 348.0
+        },
+        {
+          "shiftPct": 17,
+          "annualSavingGbp": 40.46,
+          "co2SavedKg": 22.4,
+          "gridPeakReductionMW": 370.0
+        },
+        {
+          "shiftPct": 18,
+          "annualSavingGbp": 42.84,
+          "co2SavedKg": 23.7,
+          "gridPeakReductionMW": 391.0
+        },
+        {
+          "shiftPct": 19,
+          "annualSavingGbp": 45.22,
+          "co2SavedKg": 25.0,
+          "gridPeakReductionMW": 413.0
+        },
+        {
+          "shiftPct": 20,
+          "annualSavingGbp": 47.6,
+          "co2SavedKg": 26.4,
+          "gridPeakReductionMW": 435.0
+        },
+        {
+          "shiftPct": 21,
+          "annualSavingGbp": 49.98,
+          "co2SavedKg": 27.7,
+          "gridPeakReductionMW": 456.0
+        },
+        {
+          "shiftPct": 22,
+          "annualSavingGbp": 52.36,
+          "co2SavedKg": 29.0,
+          "gridPeakReductionMW": 478.0
+        },
+        {
+          "shiftPct": 23,
+          "annualSavingGbp": 54.74,
+          "co2SavedKg": 30.3,
+          "gridPeakReductionMW": 500.0
+        },
+        {
+          "shiftPct": 24,
+          "annualSavingGbp": 57.12,
+          "co2SavedKg": 31.6,
+          "gridPeakReductionMW": 522.0
+        },
+        {
+          "shiftPct": 25,
+          "annualSavingGbp": 59.5,
+          "co2SavedKg": 32.9,
+          "gridPeakReductionMW": 543.0
+        },
+        {
+          "shiftPct": 26,
+          "annualSavingGbp": 61.88,
+          "co2SavedKg": 34.3,
+          "gridPeakReductionMW": 565.0
+        },
+        {
+          "shiftPct": 27,
+          "annualSavingGbp": 64.26,
+          "co2SavedKg": 35.6,
+          "gridPeakReductionMW": 587.0
+        },
+        {
+          "shiftPct": 28,
+          "annualSavingGbp": 66.64,
+          "co2SavedKg": 36.9,
+          "gridPeakReductionMW": 609.0
+        },
+        {
+          "shiftPct": 29,
+          "annualSavingGbp": 69.02,
+          "co2SavedKg": 38.2,
+          "gridPeakReductionMW": 630.0
+        },
+        {
+          "shiftPct": 30,
+          "annualSavingGbp": 71.4,
+          "co2SavedKg": 39.5,
+          "gridPeakReductionMW": 652.0
+        },
+        {
+          "shiftPct": 31,
+          "annualSavingGbp": 73.78,
+          "co2SavedKg": 40.8,
+          "gridPeakReductionMW": 674.0
+        },
+        {
+          "shiftPct": 32,
+          "annualSavingGbp": 76.16,
+          "co2SavedKg": 42.2,
+          "gridPeakReductionMW": 696.0
+        },
+        {
+          "shiftPct": 33,
+          "annualSavingGbp": 78.54,
+          "co2SavedKg": 43.5,
+          "gridPeakReductionMW": 717.0
+        },
+        {
+          "shiftPct": 34,
+          "annualSavingGbp": 80.92,
+          "co2SavedKg": 44.8,
+          "gridPeakReductionMW": 739.0
+        },
+        {
+          "shiftPct": 35,
+          "annualSavingGbp": 83.3,
+          "co2SavedKg": 46.1,
+          "gridPeakReductionMW": 761.0
+        },
+        {
+          "shiftPct": 36,
+          "annualSavingGbp": 85.68,
+          "co2SavedKg": 47.4,
+          "gridPeakReductionMW": 783.0
+        },
+        {
+          "shiftPct": 37,
+          "annualSavingGbp": 88.06,
+          "co2SavedKg": 48.8,
+          "gridPeakReductionMW": 804.0
+        },
+        {
+          "shiftPct": 38,
+          "annualSavingGbp": 90.44,
+          "co2SavedKg": 50.1,
+          "gridPeakReductionMW": 826.0
+        },
+        {
+          "shiftPct": 39,
+          "annualSavingGbp": 92.82,
+          "co2SavedKg": 51.4,
+          "gridPeakReductionMW": 848.0
+        },
+        {
+          "shiftPct": 40,
+          "annualSavingGbp": 95.2,
+          "co2SavedKg": 52.7,
+          "gridPeakReductionMW": 869.0
+        },
+        {
+          "shiftPct": 41,
+          "annualSavingGbp": 97.58,
+          "co2SavedKg": 54.0,
+          "gridPeakReductionMW": 891.0
+        },
+        {
+          "shiftPct": 42,
+          "annualSavingGbp": 99.96,
+          "co2SavedKg": 55.3,
+          "gridPeakReductionMW": 913.0
+        },
+        {
+          "shiftPct": 43,
+          "annualSavingGbp": 102.34,
+          "co2SavedKg": 56.7,
+          "gridPeakReductionMW": 935.0
+        },
+        {
+          "shiftPct": 44,
+          "annualSavingGbp": 104.72,
+          "co2SavedKg": 58.0,
+          "gridPeakReductionMW": 956.0
+        },
+        {
+          "shiftPct": 45,
+          "annualSavingGbp": 107.1,
+          "co2SavedKg": 59.3,
+          "gridPeakReductionMW": 978.0
+        },
+        {
+          "shiftPct": 46,
+          "annualSavingGbp": 109.48,
+          "co2SavedKg": 60.6,
+          "gridPeakReductionMW": 1000.0
+        },
+        {
+          "shiftPct": 47,
+          "annualSavingGbp": 111.86,
+          "co2SavedKg": 61.9,
+          "gridPeakReductionMW": 1022.0
+        },
+        {
+          "shiftPct": 48,
+          "annualSavingGbp": 114.24,
+          "co2SavedKg": 63.2,
+          "gridPeakReductionMW": 1043.0
+        },
+        {
+          "shiftPct": 49,
+          "annualSavingGbp": 116.62,
+          "co2SavedKg": 64.6,
+          "gridPeakReductionMW": 1065.0
+        },
+        {
+          "shiftPct": 50,
+          "annualSavingGbp": 119.0,
+          "co2SavedKg": 65.9,
+          "gridPeakReductionMW": 1087.0
+        },
+        {
+          "shiftPct": 51,
+          "annualSavingGbp": 121.38,
+          "co2SavedKg": 67.2,
+          "gridPeakReductionMW": 1109.0
+        },
+        {
+          "shiftPct": 52,
+          "annualSavingGbp": 123.76,
+          "co2SavedKg": 68.5,
+          "gridPeakReductionMW": 1130.0
+        },
+        {
+          "shiftPct": 53,
+          "annualSavingGbp": 126.14,
+          "co2SavedKg": 69.8,
+          "gridPeakReductionMW": 1152.0
+        },
+        {
+          "shiftPct": 54,
+          "annualSavingGbp": 128.52,
+          "co2SavedKg": 71.1,
+          "gridPeakReductionMW": 1174.0
+        },
+        {
+          "shiftPct": 55,
+          "annualSavingGbp": 130.9,
+          "co2SavedKg": 72.5,
+          "gridPeakReductionMW": 1195.0
+        },
+        {
+          "shiftPct": 56,
+          "annualSavingGbp": 133.28,
+          "co2SavedKg": 73.8,
+          "gridPeakReductionMW": 1217.0
+        },
+        {
+          "shiftPct": 57,
+          "annualSavingGbp": 135.66,
+          "co2SavedKg": 75.1,
+          "gridPeakReductionMW": 1239.0
+        },
+        {
+          "shiftPct": 58,
+          "annualSavingGbp": 138.04,
+          "co2SavedKg": 76.4,
+          "gridPeakReductionMW": 1261.0
+        },
+        {
+          "shiftPct": 59,
+          "annualSavingGbp": 140.42,
+          "co2SavedKg": 77.7,
+          "gridPeakReductionMW": 1282.0
+        },
+        {
+          "shiftPct": 60,
+          "annualSavingGbp": 142.8,
+          "co2SavedKg": 79.1,
+          "gridPeakReductionMW": 1304.0
+        },
+        {
+          "shiftPct": 61,
+          "annualSavingGbp": 145.19,
+          "co2SavedKg": 80.4,
+          "gridPeakReductionMW": 1326.0
+        },
+        {
+          "shiftPct": 62,
+          "annualSavingGbp": 147.57,
+          "co2SavedKg": 81.7,
+          "gridPeakReductionMW": 1348.0
+        },
+        {
+          "shiftPct": 63,
+          "annualSavingGbp": 149.95,
+          "co2SavedKg": 83.0,
+          "gridPeakReductionMW": 1369.0
+        },
+        {
+          "shiftPct": 64,
+          "annualSavingGbp": 152.33,
+          "co2SavedKg": 84.3,
+          "gridPeakReductionMW": 1391.0
+        },
+        {
+          "shiftPct": 65,
+          "annualSavingGbp": 154.71,
+          "co2SavedKg": 85.6,
+          "gridPeakReductionMW": 1413.0
+        },
+        {
+          "shiftPct": 66,
+          "annualSavingGbp": 157.09,
+          "co2SavedKg": 87.0,
+          "gridPeakReductionMW": 1435.0
+        },
+        {
+          "shiftPct": 67,
+          "annualSavingGbp": 159.47,
+          "co2SavedKg": 88.3,
+          "gridPeakReductionMW": 1456.0
+        },
+        {
+          "shiftPct": 68,
+          "annualSavingGbp": 161.85,
+          "co2SavedKg": 89.6,
+          "gridPeakReductionMW": 1478.0
+        },
+        {
+          "shiftPct": 69,
+          "annualSavingGbp": 164.23,
+          "co2SavedKg": 90.9,
+          "gridPeakReductionMW": 1500.0
+        },
+        {
+          "shiftPct": 70,
+          "annualSavingGbp": 166.61,
+          "co2SavedKg": 92.2,
+          "gridPeakReductionMW": 1522.0
+        },
+        {
+          "shiftPct": 71,
+          "annualSavingGbp": 168.99,
+          "co2SavedKg": 93.5,
+          "gridPeakReductionMW": 1543.0
+        },
+        {
+          "shiftPct": 72,
+          "annualSavingGbp": 171.37,
+          "co2SavedKg": 94.9,
+          "gridPeakReductionMW": 1565.0
+        },
+        {
+          "shiftPct": 73,
+          "annualSavingGbp": 173.75,
+          "co2SavedKg": 96.2,
+          "gridPeakReductionMW": 1587.0
+        },
+        {
+          "shiftPct": 74,
+          "annualSavingGbp": 176.13,
+          "co2SavedKg": 97.5,
+          "gridPeakReductionMW": 1608.0
+        },
+        {
+          "shiftPct": 75,
+          "annualSavingGbp": 178.51,
+          "co2SavedKg": 98.8,
+          "gridPeakReductionMW": 1630.0
+        },
+        {
+          "shiftPct": 76,
+          "annualSavingGbp": 180.89,
+          "co2SavedKg": 100.1,
+          "gridPeakReductionMW": 1652.0
+        },
+        {
+          "shiftPct": 77,
+          "annualSavingGbp": 183.27,
+          "co2SavedKg": 101.5,
+          "gridPeakReductionMW": 1674.0
+        },
+        {
+          "shiftPct": 78,
+          "annualSavingGbp": 185.65,
+          "co2SavedKg": 102.8,
+          "gridPeakReductionMW": 1695.0
+        },
+        {
+          "shiftPct": 79,
+          "annualSavingGbp": 188.03,
+          "co2SavedKg": 104.1,
+          "gridPeakReductionMW": 1717.0
+        },
+        {
+          "shiftPct": 80,
+          "annualSavingGbp": 190.41,
+          "co2SavedKg": 105.4,
+          "gridPeakReductionMW": 1739.0
+        },
+        {
+          "shiftPct": 81,
+          "annualSavingGbp": 192.79,
+          "co2SavedKg": 106.7,
+          "gridPeakReductionMW": 1761.0
+        },
+        {
+          "shiftPct": 82,
+          "annualSavingGbp": 195.17,
+          "co2SavedKg": 108.0,
+          "gridPeakReductionMW": 1782.0
+        },
+        {
+          "shiftPct": 83,
+          "annualSavingGbp": 197.55,
+          "co2SavedKg": 109.4,
+          "gridPeakReductionMW": 1804.0
+        },
+        {
+          "shiftPct": 84,
+          "annualSavingGbp": 199.93,
+          "co2SavedKg": 110.7,
+          "gridPeakReductionMW": 1826.0
+        },
+        {
+          "shiftPct": 85,
+          "annualSavingGbp": 202.31,
+          "co2SavedKg": 112.0,
+          "gridPeakReductionMW": 1848.0
+        },
+        {
+          "shiftPct": 86,
+          "annualSavingGbp": 204.69,
+          "co2SavedKg": 113.3,
+          "gridPeakReductionMW": 1869.0
+        },
+        {
+          "shiftPct": 87,
+          "annualSavingGbp": 207.07,
+          "co2SavedKg": 114.6,
+          "gridPeakReductionMW": 1891.0
+        },
+        {
+          "shiftPct": 88,
+          "annualSavingGbp": 209.45,
+          "co2SavedKg": 115.9,
+          "gridPeakReductionMW": 1913.0
+        },
+        {
+          "shiftPct": 89,
+          "annualSavingGbp": 211.83,
+          "co2SavedKg": 117.3,
+          "gridPeakReductionMW": 1935.0
+        },
+        {
+          "shiftPct": 90,
+          "annualSavingGbp": 214.21,
+          "co2SavedKg": 118.6,
+          "gridPeakReductionMW": 1956.0
+        },
+        {
+          "shiftPct": 91,
+          "annualSavingGbp": 216.59,
+          "co2SavedKg": 119.9,
+          "gridPeakReductionMW": 1978.0
+        },
+        {
+          "shiftPct": 92,
+          "annualSavingGbp": 218.97,
+          "co2SavedKg": 121.2,
+          "gridPeakReductionMW": 2000.0
+        },
+        {
+          "shiftPct": 93,
+          "annualSavingGbp": 221.35,
+          "co2SavedKg": 122.5,
+          "gridPeakReductionMW": 2021.0
+        },
+        {
+          "shiftPct": 94,
+          "annualSavingGbp": 223.73,
+          "co2SavedKg": 123.9,
+          "gridPeakReductionMW": 2043.0
+        },
+        {
+          "shiftPct": 95,
+          "annualSavingGbp": 226.11,
+          "co2SavedKg": 125.2,
+          "gridPeakReductionMW": 2065.0
+        },
+        {
+          "shiftPct": 96,
+          "annualSavingGbp": 228.49,
+          "co2SavedKg": 126.5,
+          "gridPeakReductionMW": 2087.0
+        },
+        {
+          "shiftPct": 97,
+          "annualSavingGbp": 230.87,
+          "co2SavedKg": 127.8,
+          "gridPeakReductionMW": 2108.0
+        },
+        {
+          "shiftPct": 98,
+          "annualSavingGbp": 233.25,
+          "co2SavedKg": 129.1,
+          "gridPeakReductionMW": 2130.0
+        },
+        {
+          "shiftPct": 99,
+          "annualSavingGbp": 235.63,
+          "co2SavedKg": 130.4,
+          "gridPeakReductionMW": 2152.0
+        },
+        {
+          "shiftPct": 100,
+          "annualSavingGbp": 238.01,
+          "co2SavedKg": 131.8,
+          "gridPeakReductionMW": 2174.0
+        }
+      ]
+    },
+    "adversity": {
+      "annualKwh": 2400,
+      "baselineCostGbp": 692.56,
+      "shiftSavings": [
+        {
+          "shiftPct": 0,
+          "annualSavingGbp": 0.0,
+          "co2SavedKg": 0.0,
+          "gridPeakReductionMW": 0.0
+        },
+        {
+          "shiftPct": 1,
+          "annualSavingGbp": 1.35,
+          "co2SavedKg": 0.8,
+          "gridPeakReductionMW": 12.0
+        },
+        {
+          "shiftPct": 2,
+          "annualSavingGbp": 2.71,
+          "co2SavedKg": 1.5,
+          "gridPeakReductionMW": 25.0
+        },
+        {
+          "shiftPct": 3,
+          "annualSavingGbp": 4.07,
+          "co2SavedKg": 2.3,
+          "gridPeakReductionMW": 37.0
+        },
+        {
+          "shiftPct": 4,
+          "annualSavingGbp": 5.42,
+          "co2SavedKg": 3.0,
+          "gridPeakReductionMW": 50.0
+        },
+        {
+          "shiftPct": 5,
+          "annualSavingGbp": 6.78,
+          "co2SavedKg": 3.8,
+          "gridPeakReductionMW": 62.0
+        },
+        {
+          "shiftPct": 6,
+          "annualSavingGbp": 8.14,
+          "co2SavedKg": 4.5,
+          "gridPeakReductionMW": 74.0
+        },
+        {
+          "shiftPct": 7,
+          "annualSavingGbp": 9.5,
+          "co2SavedKg": 5.3,
+          "gridPeakReductionMW": 87.0
+        },
+        {
+          "shiftPct": 8,
+          "annualSavingGbp": 10.85,
+          "co2SavedKg": 6.0,
+          "gridPeakReductionMW": 99.0
+        },
+        {
+          "shiftPct": 9,
+          "annualSavingGbp": 12.21,
+          "co2SavedKg": 6.8,
+          "gridPeakReductionMW": 112.0
+        },
+        {
+          "shiftPct": 10,
+          "annualSavingGbp": 13.57,
+          "co2SavedKg": 7.5,
+          "gridPeakReductionMW": 124.0
+        },
+        {
+          "shiftPct": 11,
+          "annualSavingGbp": 14.92,
+          "co2SavedKg": 8.3,
+          "gridPeakReductionMW": 136.0
+        },
+        {
+          "shiftPct": 12,
+          "annualSavingGbp": 16.28,
+          "co2SavedKg": 9.0,
+          "gridPeakReductionMW": 149.0
+        },
+        {
+          "shiftPct": 13,
+          "annualSavingGbp": 17.64,
+          "co2SavedKg": 9.8,
+          "gridPeakReductionMW": 161.0
+        },
+        {
+          "shiftPct": 14,
+          "annualSavingGbp": 19.0,
+          "co2SavedKg": 10.5,
+          "gridPeakReductionMW": 174.0
+        },
+        {
+          "shiftPct": 15,
+          "annualSavingGbp": 20.35,
+          "co2SavedKg": 11.3,
+          "gridPeakReductionMW": 186.0
+        },
+        {
+          "shiftPct": 16,
+          "annualSavingGbp": 21.71,
+          "co2SavedKg": 12.0,
+          "gridPeakReductionMW": 198.0
+        },
+        {
+          "shiftPct": 17,
+          "annualSavingGbp": 23.07,
+          "co2SavedKg": 12.8,
+          "gridPeakReductionMW": 211.0
+        },
+        {
+          "shiftPct": 18,
+          "annualSavingGbp": 24.42,
+          "co2SavedKg": 13.5,
+          "gridPeakReductionMW": 223.0
+        },
+        {
+          "shiftPct": 19,
+          "annualSavingGbp": 25.78,
+          "co2SavedKg": 14.3,
+          "gridPeakReductionMW": 235.0
+        },
+        {
+          "shiftPct": 20,
+          "annualSavingGbp": 27.14,
+          "co2SavedKg": 15.0,
+          "gridPeakReductionMW": 248.0
+        },
+        {
+          "shiftPct": 21,
+          "annualSavingGbp": 28.49,
+          "co2SavedKg": 15.8,
+          "gridPeakReductionMW": 260.0
+        },
+        {
+          "shiftPct": 22,
+          "annualSavingGbp": 29.85,
+          "co2SavedKg": 16.5,
+          "gridPeakReductionMW": 273.0
+        },
+        {
+          "shiftPct": 23,
+          "annualSavingGbp": 31.21,
+          "co2SavedKg": 17.3,
+          "gridPeakReductionMW": 285.0
+        },
+        {
+          "shiftPct": 24,
+          "annualSavingGbp": 32.57,
+          "co2SavedKg": 18.0,
+          "gridPeakReductionMW": 297.0
+        },
+        {
+          "shiftPct": 25,
+          "annualSavingGbp": 33.92,
+          "co2SavedKg": 18.8,
+          "gridPeakReductionMW": 310.0
+        },
+        {
+          "shiftPct": 26,
+          "annualSavingGbp": 35.28,
+          "co2SavedKg": 19.5,
+          "gridPeakReductionMW": 322.0
+        },
+        {
+          "shiftPct": 27,
+          "annualSavingGbp": 36.64,
+          "co2SavedKg": 20.3,
+          "gridPeakReductionMW": 335.0
+        },
+        {
+          "shiftPct": 28,
+          "annualSavingGbp": 37.99,
+          "co2SavedKg": 21.0,
+          "gridPeakReductionMW": 347.0
+        },
+        {
+          "shiftPct": 29,
+          "annualSavingGbp": 39.35,
+          "co2SavedKg": 21.8,
+          "gridPeakReductionMW": 359.0
+        },
+        {
+          "shiftPct": 30,
+          "annualSavingGbp": 40.71,
+          "co2SavedKg": 22.5,
+          "gridPeakReductionMW": 372.0
+        },
+        {
+          "shiftPct": 31,
+          "annualSavingGbp": 42.06,
+          "co2SavedKg": 23.3,
+          "gridPeakReductionMW": 384.0
+        },
+        {
+          "shiftPct": 32,
+          "annualSavingGbp": 43.42,
+          "co2SavedKg": 24.0,
+          "gridPeakReductionMW": 397.0
+        },
+        {
+          "shiftPct": 33,
+          "annualSavingGbp": 44.78,
+          "co2SavedKg": 24.8,
+          "gridPeakReductionMW": 409.0
+        },
+        {
+          "shiftPct": 34,
+          "annualSavingGbp": 46.14,
+          "co2SavedKg": 25.5,
+          "gridPeakReductionMW": 421.0
+        },
+        {
+          "shiftPct": 35,
+          "annualSavingGbp": 47.49,
+          "co2SavedKg": 26.3,
+          "gridPeakReductionMW": 434.0
+        },
+        {
+          "shiftPct": 36,
+          "annualSavingGbp": 48.85,
+          "co2SavedKg": 27.0,
+          "gridPeakReductionMW": 446.0
+        },
+        {
+          "shiftPct": 37,
+          "annualSavingGbp": 50.21,
+          "co2SavedKg": 27.8,
+          "gridPeakReductionMW": 459.0
+        },
+        {
+          "shiftPct": 38,
+          "annualSavingGbp": 51.56,
+          "co2SavedKg": 28.5,
+          "gridPeakReductionMW": 471.0
+        },
+        {
+          "shiftPct": 39,
+          "annualSavingGbp": 52.92,
+          "co2SavedKg": 29.3,
+          "gridPeakReductionMW": 483.0
+        },
+        {
+          "shiftPct": 40,
+          "annualSavingGbp": 54.28,
+          "co2SavedKg": 30.0,
+          "gridPeakReductionMW": 496.0
+        },
+        {
+          "shiftPct": 41,
+          "annualSavingGbp": 55.64,
+          "co2SavedKg": 30.8,
+          "gridPeakReductionMW": 508.0
+        },
+        {
+          "shiftPct": 42,
+          "annualSavingGbp": 56.99,
+          "co2SavedKg": 31.6,
+          "gridPeakReductionMW": 521.0
+        },
+        {
+          "shiftPct": 43,
+          "annualSavingGbp": 58.35,
+          "co2SavedKg": 32.3,
+          "gridPeakReductionMW": 533.0
+        },
+        {
+          "shiftPct": 44,
+          "annualSavingGbp": 59.71,
+          "co2SavedKg": 33.1,
+          "gridPeakReductionMW": 545.0
+        },
+        {
+          "shiftPct": 45,
+          "annualSavingGbp": 61.06,
+          "co2SavedKg": 33.8,
+          "gridPeakReductionMW": 558.0
+        },
+        {
+          "shiftPct": 46,
+          "annualSavingGbp": 62.42,
+          "co2SavedKg": 34.6,
+          "gridPeakReductionMW": 570.0
+        },
+        {
+          "shiftPct": 47,
+          "annualSavingGbp": 63.78,
+          "co2SavedKg": 35.3,
+          "gridPeakReductionMW": 582.0
+        },
+        {
+          "shiftPct": 48,
+          "annualSavingGbp": 65.13,
+          "co2SavedKg": 36.1,
+          "gridPeakReductionMW": 595.0
+        },
+        {
+          "shiftPct": 49,
+          "annualSavingGbp": 66.49,
+          "co2SavedKg": 36.8,
+          "gridPeakReductionMW": 607.0
+        },
+        {
+          "shiftPct": 50,
+          "annualSavingGbp": 67.85,
+          "co2SavedKg": 37.6,
+          "gridPeakReductionMW": 620.0
+        },
+        {
+          "shiftPct": 51,
+          "annualSavingGbp": 69.21,
+          "co2SavedKg": 38.3,
+          "gridPeakReductionMW": 632.0
+        },
+        {
+          "shiftPct": 52,
+          "annualSavingGbp": 70.56,
+          "co2SavedKg": 39.1,
+          "gridPeakReductionMW": 644.0
+        },
+        {
+          "shiftPct": 53,
+          "annualSavingGbp": 71.92,
+          "co2SavedKg": 39.8,
+          "gridPeakReductionMW": 657.0
+        },
+        {
+          "shiftPct": 54,
+          "annualSavingGbp": 73.28,
+          "co2SavedKg": 40.6,
+          "gridPeakReductionMW": 669.0
+        },
+        {
+          "shiftPct": 55,
+          "annualSavingGbp": 74.63,
+          "co2SavedKg": 41.3,
+          "gridPeakReductionMW": 682.0
+        },
+        {
+          "shiftPct": 56,
+          "annualSavingGbp": 75.99,
+          "co2SavedKg": 42.1,
+          "gridPeakReductionMW": 694.0
+        },
+        {
+          "shiftPct": 57,
+          "annualSavingGbp": 77.35,
+          "co2SavedKg": 42.8,
+          "gridPeakReductionMW": 706.0
+        },
+        {
+          "shiftPct": 58,
+          "annualSavingGbp": 78.71,
+          "co2SavedKg": 43.6,
+          "gridPeakReductionMW": 719.0
+        },
+        {
+          "shiftPct": 59,
+          "annualSavingGbp": 80.06,
+          "co2SavedKg": 44.3,
+          "gridPeakReductionMW": 731.0
+        },
+        {
+          "shiftPct": 60,
+          "annualSavingGbp": 81.42,
+          "co2SavedKg": 45.1,
+          "gridPeakReductionMW": 744.0
+        },
+        {
+          "shiftPct": 61,
+          "annualSavingGbp": 82.78,
+          "co2SavedKg": 45.8,
+          "gridPeakReductionMW": 756.0
+        },
+        {
+          "shiftPct": 62,
+          "annualSavingGbp": 84.13,
+          "co2SavedKg": 46.6,
+          "gridPeakReductionMW": 768.0
+        },
+        {
+          "shiftPct": 63,
+          "annualSavingGbp": 85.49,
+          "co2SavedKg": 47.3,
+          "gridPeakReductionMW": 781.0
+        },
+        {
+          "shiftPct": 64,
+          "annualSavingGbp": 86.85,
+          "co2SavedKg": 48.1,
+          "gridPeakReductionMW": 793.0
+        },
+        {
+          "shiftPct": 65,
+          "annualSavingGbp": 88.2,
+          "co2SavedKg": 48.8,
+          "gridPeakReductionMW": 806.0
+        },
+        {
+          "shiftPct": 66,
+          "annualSavingGbp": 89.56,
+          "co2SavedKg": 49.6,
+          "gridPeakReductionMW": 818.0
+        },
+        {
+          "shiftPct": 67,
+          "annualSavingGbp": 90.92,
+          "co2SavedKg": 50.3,
+          "gridPeakReductionMW": 830.0
+        },
+        {
+          "shiftPct": 68,
+          "annualSavingGbp": 92.28,
+          "co2SavedKg": 51.1,
+          "gridPeakReductionMW": 843.0
+        },
+        {
+          "shiftPct": 69,
+          "annualSavingGbp": 93.63,
+          "co2SavedKg": 51.8,
+          "gridPeakReductionMW": 855.0
+        },
+        {
+          "shiftPct": 70,
+          "annualSavingGbp": 94.99,
+          "co2SavedKg": 52.6,
+          "gridPeakReductionMW": 868.0
+        },
+        {
+          "shiftPct": 71,
+          "annualSavingGbp": 96.35,
+          "co2SavedKg": 53.3,
+          "gridPeakReductionMW": 880.0
+        },
+        {
+          "shiftPct": 72,
+          "annualSavingGbp": 97.7,
+          "co2SavedKg": 54.1,
+          "gridPeakReductionMW": 892.0
+        },
+        {
+          "shiftPct": 73,
+          "annualSavingGbp": 99.06,
+          "co2SavedKg": 54.8,
+          "gridPeakReductionMW": 905.0
+        },
+        {
+          "shiftPct": 74,
+          "annualSavingGbp": 100.42,
+          "co2SavedKg": 55.6,
+          "gridPeakReductionMW": 917.0
+        },
+        {
+          "shiftPct": 75,
+          "annualSavingGbp": 101.77,
+          "co2SavedKg": 56.3,
+          "gridPeakReductionMW": 929.0
+        },
+        {
+          "shiftPct": 76,
+          "annualSavingGbp": 103.13,
+          "co2SavedKg": 57.1,
+          "gridPeakReductionMW": 942.0
+        },
+        {
+          "shiftPct": 77,
+          "annualSavingGbp": 104.49,
+          "co2SavedKg": 57.8,
+          "gridPeakReductionMW": 954.0
+        },
+        {
+          "shiftPct": 78,
+          "annualSavingGbp": 105.85,
+          "co2SavedKg": 58.6,
+          "gridPeakReductionMW": 967.0
+        },
+        {
+          "shiftPct": 79,
+          "annualSavingGbp": 107.2,
+          "co2SavedKg": 59.3,
+          "gridPeakReductionMW": 979.0
+        },
+        {
+          "shiftPct": 80,
+          "annualSavingGbp": 108.56,
+          "co2SavedKg": 60.1,
+          "gridPeakReductionMW": 991.0
+        },
+        {
+          "shiftPct": 81,
+          "annualSavingGbp": 109.92,
+          "co2SavedKg": 60.8,
+          "gridPeakReductionMW": 1004.0
+        },
+        {
+          "shiftPct": 82,
+          "annualSavingGbp": 111.27,
+          "co2SavedKg": 61.6,
+          "gridPeakReductionMW": 1016.0
+        },
+        {
+          "shiftPct": 83,
+          "annualSavingGbp": 112.63,
+          "co2SavedKg": 62.4,
+          "gridPeakReductionMW": 1029.0
+        },
+        {
+          "shiftPct": 84,
+          "annualSavingGbp": 113.99,
+          "co2SavedKg": 63.1,
+          "gridPeakReductionMW": 1041.0
+        },
+        {
+          "shiftPct": 85,
+          "annualSavingGbp": 115.35,
+          "co2SavedKg": 63.9,
+          "gridPeakReductionMW": 1053.0
+        },
+        {
+          "shiftPct": 86,
+          "annualSavingGbp": 116.7,
+          "co2SavedKg": 64.6,
+          "gridPeakReductionMW": 1066.0
+        },
+        {
+          "shiftPct": 87,
+          "annualSavingGbp": 118.06,
+          "co2SavedKg": 65.4,
+          "gridPeakReductionMW": 1078.0
+        },
+        {
+          "shiftPct": 88,
+          "annualSavingGbp": 119.42,
+          "co2SavedKg": 66.1,
+          "gridPeakReductionMW": 1091.0
+        },
+        {
+          "shiftPct": 89,
+          "annualSavingGbp": 120.77,
+          "co2SavedKg": 66.9,
+          "gridPeakReductionMW": 1103.0
+        },
+        {
+          "shiftPct": 90,
+          "annualSavingGbp": 122.13,
+          "co2SavedKg": 67.6,
+          "gridPeakReductionMW": 1115.0
+        },
+        {
+          "shiftPct": 91,
+          "annualSavingGbp": 123.49,
+          "co2SavedKg": 68.4,
+          "gridPeakReductionMW": 1128.0
+        },
+        {
+          "shiftPct": 92,
+          "annualSavingGbp": 124.84,
+          "co2SavedKg": 69.1,
+          "gridPeakReductionMW": 1140.0
+        },
+        {
+          "shiftPct": 93,
+          "annualSavingGbp": 126.2,
+          "co2SavedKg": 69.9,
+          "gridPeakReductionMW": 1153.0
+        },
+        {
+          "shiftPct": 94,
+          "annualSavingGbp": 127.56,
+          "co2SavedKg": 70.6,
+          "gridPeakReductionMW": 1165.0
+        },
+        {
+          "shiftPct": 95,
+          "annualSavingGbp": 128.92,
+          "co2SavedKg": 71.4,
+          "gridPeakReductionMW": 1177.0
+        },
+        {
+          "shiftPct": 96,
+          "annualSavingGbp": 130.27,
+          "co2SavedKg": 72.1,
+          "gridPeakReductionMW": 1190.0
+        },
+        {
+          "shiftPct": 97,
+          "annualSavingGbp": 131.63,
+          "co2SavedKg": 72.9,
+          "gridPeakReductionMW": 1202.0
+        },
+        {
+          "shiftPct": 98,
+          "annualSavingGbp": 132.99,
+          "co2SavedKg": 73.6,
+          "gridPeakReductionMW": 1215.0
+        },
+        {
+          "shiftPct": 99,
+          "annualSavingGbp": 134.34,
+          "co2SavedKg": 74.4,
+          "gridPeakReductionMW": 1227.0
+        },
+        {
+          "shiftPct": 100,
+          "annualSavingGbp": 135.7,
+          "co2SavedKg": 75.1,
+          "gridPeakReductionMW": 1239.0
+        }
+      ]
+    }
+  }
+}

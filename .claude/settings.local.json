@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:carbonintensity.org.uk)",
+      "Bash(npm --version)",
+      "Bash(.venv/bin/python3 scripts/fetch_demand_profile.py)",
+      "Bash(.venv/bin/python3 scripts/process_smart_meter.py)",
+      "Bash(.venv/bin/python3 scripts/build_incentive_model.py)",
+      "Bash(npm install:*)",
+      "Bash(ls node_modules/.bin/topojson*)",
+      "Bash(curl -sL \"https://cdn.jsdelivr.net/npm/uk-topojson@1.0.0/uk.json\" -o /tmp/uk_test.json)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

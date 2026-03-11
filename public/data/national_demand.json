@@ -1,0 +1,1259 @@
+{
+  "generatedAt": "2026-03-11T16:30:10Z",
+  "seasonal": {
+    "winter": {
+      "peakDemandMW": 44667.0,
+      "minDemandMW": 26551.0,
+      "profile": [
+        {
+          "period": 1,
+          "time": "00:00",
+          "demandMW": 28437.0,
+          "normalised": 63.7
+        },
+        {
+          "period": 2,
+          "time": "00:30",
+          "demandMW": 28679.0,
+          "normalised": 64.2
+        },
+        {
+          "period": 3,
+          "time": "01:00",
+          "demandMW": 28730.0,
+          "normalised": 64.3
+        },
+        {
+          "period": 4,
+          "time": "01:30",
+          "demandMW": 28171.0,
+          "normalised": 63.1
+        },
+        {
+          "period": 5,
+          "time": "02:00",
+          "demandMW": 27938.0,
+          "normalised": 62.5
+        },
+        {
+          "period": 6,
+          "time": "02:30",
+          "demandMW": 27752.0,
+          "normalised": 62.1
+        },
+        {
+          "period": 7,
+          "time": "03:00",
+          "demandMW": 27468.0,
+          "normalised": 61.5
+        },
+        {
+          "period": 8,
+          "time": "03:30",
+          "demandMW": 27135.0,
+          "normalised": 60.7
+        },
+        {
+          "period": 9,
+          "time": "04:00",
+          "demandMW": 26639.0,
+          "normalised": 59.6
+        },
+        {
+          "period": 10,
+          "time": "04:30",
+          "demandMW": 26551.0,
+          "normalised": 59.4
+        },
+        {
+          "period": 11,
+          "time": "05:00",
+          "demandMW": 27013.0,
+          "normalised": 60.5
+        },
+        {
+          "period": 12,
+          "time": "05:30",
+          "demandMW": 28181.0,
+          "normalised": 63.1
+        },
+        {
+          "period": 13,
+          "time": "06:00",
+          "demandMW": 31117.0,
+          "normalised": 69.7
+        },
+        {
+          "period": 14,
+          "time": "06:30",
+          "demandMW": 34203.0,
+          "normalised": 76.6
+        },
+        {
+          "period": 15,
+          "time": "07:00",
+          "demandMW": 37723.0,
+          "normalised": 84.5
+        },
+        {
+          "period": 16,
+          "time": "07:30",
+          "demandMW": 39830.0,
+          "normalised": 89.2
+        },
+        {
+          "period": 17,
+          "time": "08:00",
+          "demandMW": 41013.0,
+          "normalised": 91.8
+        },
+        {
+          "period": 18,
+          "time": "08:30",
+          "demandMW": 41515.0,
+          "normalised": 92.9
+        },
+        {
+          "period": 19,
+          "time": "09:00",
+          "demandMW": 42909.0,
+          "normalised": 96.1
+        },
+        {
+          "period": 20,
+          "time": "09:30",
+          "demandMW": 43157.0,
+          "normalised": 96.6
+        },
+        {
+          "period": 21,
+          "time": "10:00",
+          "demandMW": 42346.0,
+          "normalised": 94.8
+        },
+        {
+          "period": 22,
+          "time": "10:30",
+          "demandMW": 41794.0,
+          "normalised": 93.6
+        },
+        {
+          "period": 23,
+          "time": "11:00",
+          "demandMW": 41388.0,
+          "normalised": 92.7
+        },
+        {
+          "period": 24,
+          "time": "11:30",
+          "demandMW": 41083.0,
+          "normalised": 92.0
+        },
+        {
+          "period": 25,
+          "time": "12:00",
+          "demandMW": 40777.0,
+          "normalised": 91.3
+        },
+        {
+          "period": 26,
+          "time": "12:30",
+          "demandMW": 41011.0,
+          "normalised": 91.8
+        },
+        {
+          "period": 27,
+          "time": "13:00",
+          "demandMW": 40780.0,
+          "normalised": 91.3
+        },
+        {
+          "period": 28,
+          "time": "13:30",
+          "demandMW": 40598.0,
+          "normalised": 90.9
+        },
+        {
+          "period": 29,
+          "time": "14:00",
+          "demandMW": 40275.0,
+          "normalised": 90.2
+        },
+        {
+          "period": 30,
+          "time": "14:30",
+          "demandMW": 40421.0,
+          "normalised": 90.5
+        },
+        {
+          "period": 31,
+          "time": "15:00",
+          "demandMW": 41021.0,
+          "normalised": 91.8
+        },
+        {
+          "period": 32,
+          "time": "15:30",
+          "demandMW": 41872.0,
+          "normalised": 93.7
+        },
+        {
+          "period": 33,
+          "time": "16:00",
+          "demandMW": 42527.0,
+          "normalised": 95.2
+        },
+        {
+          "period": 34,
+          "time": "16:30",
+          "demandMW": 43884.0,
+          "normalised": 98.2
+        },
+        {
+          "period": 35,
+          "time": "17:00",
+          "demandMW": 44667.0,
+          "normalised": 100.0
+        },
+        {
+          "period": 36,
+          "time": "17:30",
+          "demandMW": 44665.0,
+          "normalised": 100.0
+        },
+        {
+          "period": 37,
+          "time": "18:00",
+          "demandMW": 44270.0,
+          "normalised": 99.1
+        },
+        {
+          "period": 38,
+          "time": "18:30",
+          "demandMW": 44359.0,
+          "normalised": 99.3
+        },
+        {
+          "period": 39,
+          "time": "19:00",
+          "demandMW": 44095.0,
+          "normalised": 98.7
+        },
+        {
+          "period": 40,
+          "time": "19:30",
+          "demandMW": 43435.0,
+          "normalised": 97.2
+        },
+        {
+          "period": 41,
+          "time": "20:00",
+          "demandMW": 41989.0,
+          "normalised": 94.0
+        },
+        {
+          "period": 42,
+          "time": "20:30",
+          "demandMW": 40812.0,
+          "normalised": 91.4
+        },
+        {
+          "period": 43,
+          "time": "21:00",
+          "demandMW": 38226.0,
+          "normalised": 85.6
+        },
+        {
+          "period": 44,
+          "time": "21:30",
+          "demandMW": 35918.0,
+          "normalised": 80.4
+        },
+        {
+          "period": 45,
+          "time": "22:00",
+          "demandMW": 33809.0,
+          "normalised": 75.7
+        },
+        {
+          "period": 46,
+          "time": "22:30",
+          "demandMW": 32187.0,
+          "normalised": 72.1
+        },
+        {
+          "period": 47,
+          "time": "23:00",
+          "demandMW": 30483.0,
+          "normalised": 68.2
+        },
+        {
+          "period": 48,
+          "time": "23:30",
+          "demandMW": 29171.0,
+          "normalised": 65.3
+        }
+      ],
+      "peakWindow": {
+        "startPeriod": 16,
+        "endPeriod": 43,
+        "startTime": "07:30",
+        "endTime": "21:30"
+      },
+      "label": "Winter (2024-01-17)"
+    },
+    "spring": {
+      "peakDemandMW": 32115.0,
+      "minDemandMW": 21223.0,
+      "profile": [
+        {
+          "period": 1,
+          "time": "00:00",
+          "demandMW": 23392.0,
+          "normalised": 72.8
+        },
+        {
+          "period": 2,
+          "time": "00:30",
+          "demandMW": 22967.0,
+          "normalised": 71.5
+        },
+        {
+          "period": 3,
+          "time": "01:00",
+          "demandMW": 22727.0,
+          "normalised": 70.8
+        },
+        {
+          "period": 4,
+          "time": "01:30",
+          "demandMW": 22950.0,
+          "normalised": 71.5
+        },
+        {
+          "period": 5,
+          "time": "02:00",
+          "demandMW": 22989.0,
+          "normalised": 71.6
+        },
+        {
+          "period": 6,
+          "time": "02:30",
+          "demandMW": 22535.0,
+          "normalised": 70.2
+        },
+        {
+          "period": 7,
+          "time": "03:00",
+          "demandMW": 22235.0,
+          "normalised": 69.2
+        },
+        {
+          "period": 8,
+          "time": "03:30",
+          "demandMW": 21706.0,
+          "normalised": 67.6
+        },
+        {
+          "period": 9,
+          "time": "04:00",
+          "demandMW": 21503.0,
+          "normalised": 67.0
+        },
+        {
+          "period": 10,
+          "time": "04:30",
+          "demandMW": 21427.0,
+          "normalised": 66.7
+        },
+        {
+          "period": 11,
+          "time": "05:00",
+          "demandMW": 22029.0,
+          "normalised": 68.6
+        },
+        {
+          "period": 12,
+          "time": "05:30",
+          "demandMW": 22915.0,
+          "normalised": 71.4
+        },
+        {
+          "period": 13,
+          "time": "06:00",
+          "demandMW": 24663.0,
+          "normalised": 76.8
+        },
+        {
+          "period": 14,
+          "time": "06:30",
+          "demandMW": 25898.0,
+          "normalised": 80.6
+        },
+        {
+          "period": 15,
+          "time": "07:00",
+          "demandMW": 27713.0,
+          "normalised": 86.3
+        },
+        {
+          "period": 16,
+          "time": "07:30",
+          "demandMW": 28990.0,
+          "normalised": 90.3
+        },
+        {
+          "period": 17,
+          "time": "08:00",
+          "demandMW": 30466.0,
+          "normalised": 94.9
+        },
+        {
+          "period": 18,
+          "time": "08:30",
+          "demandMW": 30429.0,
+          "normalised": 94.8
+        },
+        {
+          "period": 19,
+          "time": "09:00",
+          "demandMW": 30650.0,
+          "normalised": 95.4
+        },
+        {
+          "period": 20,
+          "time": "09:30",
+          "demandMW": 30374.0,
+          "normalised": 94.6
+        },
+        {
+          "period": 21,
+          "time": "10:00",
+          "demandMW": 29660.0,
+          "normalised": 92.4
+        },
+        {
+          "period": 22,
+          "time": "10:30",
+          "demandMW": 29298.0,
+          "normalised": 91.2
+        },
+        {
+          "period": 23,
+          "time": "11:00",
+          "demandMW": 29429.0,
+          "normalised": 91.6
+        },
+        {
+          "period": 24,
+          "time": "11:30",
+          "demandMW": 29723.0,
+          "normalised": 92.6
+        },
+        {
+          "period": 25,
+          "time": "12:00",
+          "demandMW": 30019.0,
+          "normalised": 93.5
+        },
+        {
+          "period": 26,
+          "time": "12:30",
+          "demandMW": 30132.0,
+          "normalised": 93.8
+        },
+        {
+          "period": 27,
+          "time": "13:00",
+          "demandMW": 30191.0,
+          "normalised": 94.0
+        },
+        {
+          "period": 28,
+          "time": "13:30",
+          "demandMW": 29882.0,
+          "normalised": 93.0
+        },
+        {
+          "period": 29,
+          "time": "14:00",
+          "demandMW": 29997.0,
+          "normalised": 93.4
+        },
+        {
+          "period": 30,
+          "time": "14:30",
+          "demandMW": 30086.0,
+          "normalised": 93.7
+        },
+        {
+          "period": 31,
+          "time": "15:00",
+          "demandMW": 30012.0,
+          "normalised": 93.5
+        },
+        {
+          "period": 32,
+          "time": "15:30",
+          "demandMW": 30079.0,
+          "normalised": 93.7
+        },
+        {
+          "period": 33,
+          "time": "16:00",
+          "demandMW": 30320.0,
+          "normalised": 94.4
+        },
+        {
+          "period": 34,
+          "time": "16:30",
+          "demandMW": 30701.0,
+          "normalised": 95.6
+        },
+        {
+          "period": 35,
+          "time": "17:00",
+          "demandMW": 31445.0,
+          "normalised": 97.9
+        },
+        {
+          "period": 36,
+          "time": "17:30",
+          "demandMW": 32115.0,
+          "normalised": 100.0
+        },
+        {
+          "period": 37,
+          "time": "18:00",
+          "demandMW": 32032.0,
+          "normalised": 99.7
+        },
+        {
+          "period": 38,
+          "time": "18:30",
+          "demandMW": 31904.0,
+          "normalised": 99.3
+        },
+        {
+          "period": 39,
+          "time": "19:00",
+          "demandMW": 31739.0,
+          "normalised": 98.8
+        },
+        {
+          "period": 40,
+          "time": "19:30",
+          "demandMW": 31376.0,
+          "normalised": 97.7
+        },
+        {
+          "period": 41,
+          "time": "20:00",
+          "demandMW": 31039.0,
+          "normalised": 96.6
+        },
+        {
+          "period": 42,
+          "time": "20:30",
+          "demandMW": 30073.0,
+          "normalised": 93.6
+        },
+        {
+          "period": 43,
+          "time": "21:00",
+          "demandMW": 28745.0,
+          "normalised": 89.5
+        },
+        {
+          "period": 44,
+          "time": "21:30",
+          "demandMW": 27038.0,
+          "normalised": 84.2
+        },
+        {
+          "period": 45,
+          "time": "22:00",
+          "demandMW": 25115.0,
+          "normalised": 78.2
+        },
+        {
+          "period": 46,
+          "time": "22:30",
+          "demandMW": 23663.0,
+          "normalised": 73.7
+        },
+        {
+          "period": 47,
+          "time": "23:00",
+          "demandMW": 21686.0,
+          "normalised": 67.5
+        },
+        {
+          "period": 48,
+          "time": "23:30",
+          "demandMW": 21223.0,
+          "normalised": 66.1
+        }
+      ],
+      "peakWindow": {
+        "startPeriod": 15,
+        "endPeriod": 43,
+        "startTime": "07:00",
+        "endTime": "21:30"
+      },
+      "label": "Spring (2024-04-10)"
+    },
+    "summer": {
+      "peakDemandMW": 27516.0,
+      "minDemandMW": 18498.0,
+      "profile": [
+        {
+          "period": 1,
+          "time": "00:00",
+          "demandMW": 20842.0,
+          "normalised": 75.7
+        },
+        {
+          "period": 2,
+          "time": "00:30",
+          "demandMW": 20477.0,
+          "normalised": 74.4
+        },
+        {
+          "period": 3,
+          "time": "01:00",
+          "demandMW": 20180.0,
+          "normalised": 73.3
+        },
+        {
+          "period": 4,
+          "time": "01:30",
+          "demandMW": 19877.0,
+          "normalised": 72.2
+        },
+        {
+          "period": 5,
+          "time": "02:00",
+          "demandMW": 19473.0,
+          "normalised": 70.8
+        },
+        {
+          "period": 6,
+          "time": "02:30",
+          "demandMW": 19183.0,
+          "normalised": 69.7
+        },
+        {
+          "period": 7,
+          "time": "03:00",
+          "demandMW": 19116.0,
+          "normalised": 69.5
+        },
+        {
+          "period": 8,
+          "time": "03:30",
+          "demandMW": 18824.0,
+          "normalised": 68.4
+        },
+        {
+          "period": 9,
+          "time": "04:00",
+          "demandMW": 18539.0,
+          "normalised": 67.4
+        },
+        {
+          "period": 10,
+          "time": "04:30",
+          "demandMW": 18498.0,
+          "normalised": 67.2
+        },
+        {
+          "period": 11,
+          "time": "05:00",
+          "demandMW": 18821.0,
+          "normalised": 68.4
+        },
+        {
+          "period": 12,
+          "time": "05:30",
+          "demandMW": 19429.0,
+          "normalised": 70.6
+        },
+        {
+          "period": 13,
+          "time": "06:00",
+          "demandMW": 21419.0,
+          "normalised": 77.8
+        },
+        {
+          "period": 14,
+          "time": "06:30",
+          "demandMW": 22844.0,
+          "normalised": 83.0
+        },
+        {
+          "period": 15,
+          "time": "07:00",
+          "demandMW": 25041.0,
+          "normalised": 91.0
+        },
+        {
+          "period": 16,
+          "time": "07:30",
+          "demandMW": 25809.0,
+          "normalised": 93.8
+        },
+        {
+          "period": 17,
+          "time": "08:00",
+          "demandMW": 26525.0,
+          "normalised": 96.4
+        },
+        {
+          "period": 18,
+          "time": "08:30",
+          "demandMW": 26547.0,
+          "normalised": 96.5
+        },
+        {
+          "period": 19,
+          "time": "09:00",
+          "demandMW": 26580.0,
+          "normalised": 96.6
+        },
+        {
+          "period": 20,
+          "time": "09:30",
+          "demandMW": 26456.0,
+          "normalised": 96.1
+        },
+        {
+          "period": 21,
+          "time": "10:00",
+          "demandMW": 25933.0,
+          "normalised": 94.2
+        },
+        {
+          "period": 22,
+          "time": "10:30",
+          "demandMW": 26115.0,
+          "normalised": 94.9
+        },
+        {
+          "period": 23,
+          "time": "11:00",
+          "demandMW": 25936.0,
+          "normalised": 94.3
+        },
+        {
+          "period": 24,
+          "time": "11:30",
+          "demandMW": 25607.0,
+          "normalised": 93.1
+        },
+        {
+          "period": 25,
+          "time": "12:00",
+          "demandMW": 25438.0,
+          "normalised": 92.4
+        },
+        {
+          "period": 26,
+          "time": "12:30",
+          "demandMW": 25249.0,
+          "normalised": 91.8
+        },
+        {
+          "period": 27,
+          "time": "13:00",
+          "demandMW": 24903.0,
+          "normalised": 90.5
+        },
+        {
+          "period": 28,
+          "time": "13:30",
+          "demandMW": 24142.0,
+          "normalised": 87.7
+        },
+        {
+          "period": 29,
+          "time": "14:00",
+          "demandMW": 23861.0,
+          "normalised": 86.7
+        },
+        {
+          "period": 30,
+          "time": "14:30",
+          "demandMW": 23712.0,
+          "normalised": 86.2
+        },
+        {
+          "period": 31,
+          "time": "15:00",
+          "demandMW": 23289.0,
+          "normalised": 84.6
+        },
+        {
+          "period": 32,
+          "time": "15:30",
+          "demandMW": 23703.0,
+          "normalised": 86.1
+        },
+        {
+          "period": 33,
+          "time": "16:00",
+          "demandMW": 24293.0,
+          "normalised": 88.3
+        },
+        {
+          "period": 34,
+          "time": "16:30",
+          "demandMW": 25204.0,
+          "normalised": 91.6
+        },
+        {
+          "period": 35,
+          "time": "17:00",
+          "demandMW": 26186.0,
+          "normalised": 95.2
+        },
+        {
+          "period": 36,
+          "time": "17:30",
+          "demandMW": 26904.0,
+          "normalised": 97.8
+        },
+        {
+          "period": 37,
+          "time": "18:00",
+          "demandMW": 27061.0,
+          "normalised": 98.3
+        },
+        {
+          "period": 38,
+          "time": "18:30",
+          "demandMW": 27233.0,
+          "normalised": 99.0
+        },
+        {
+          "period": 39,
+          "time": "19:00",
+          "demandMW": 27516.0,
+          "normalised": 100.0
+        },
+        {
+          "period": 40,
+          "time": "19:30",
+          "demandMW": 27463.0,
+          "normalised": 99.8
+        },
+        {
+          "period": 41,
+          "time": "20:00",
+          "demandMW": 26446.0,
+          "normalised": 96.1
+        },
+        {
+          "period": 42,
+          "time": "20:30",
+          "demandMW": 25837.0,
+          "normalised": 93.9
+        },
+        {
+          "period": 43,
+          "time": "21:00",
+          "demandMW": 25124.0,
+          "normalised": 91.3
+        },
+        {
+          "period": 44,
+          "time": "21:30",
+          "demandMW": 24484.0,
+          "normalised": 89.0
+        },
+        {
+          "period": 45,
+          "time": "22:00",
+          "demandMW": 24581.0,
+          "normalised": 89.3
+        },
+        {
+          "period": 46,
+          "time": "22:30",
+          "demandMW": 23543.0,
+          "normalised": 85.6
+        },
+        {
+          "period": 47,
+          "time": "23:00",
+          "demandMW": 22392.0,
+          "normalised": 81.4
+        },
+        {
+          "period": 48,
+          "time": "23:30",
+          "demandMW": 21013.0,
+          "normalised": 76.4
+        }
+      ],
+      "peakWindow": {
+        "startPeriod": 15,
+        "endPeriod": 46,
+        "startTime": "07:00",
+        "endTime": "23:00"
+      },
+      "label": "Summer (2024-07-10)"
+    },
+    "autumn": {
+      "peakDemandMW": 33842.0,
+      "minDemandMW": 19069.0,
+      "profile": [
+        {
+          "period": 1,
+          "time": "00:00",
+          "demandMW": 21720.0,
+          "normalised": 64.2
+        },
+        {
+          "period": 2,
+          "time": "00:30",
+          "demandMW": 21151.0,
+          "normalised": 62.5
+        },
+        {
+          "period": 3,
+          "time": "01:00",
+          "demandMW": 20638.0,
+          "normalised": 61.0
+        },
+        {
+          "period": 4,
+          "time": "01:30",
+          "demandMW": 20965.0,
+          "normalised": 61.9
+        },
+        {
+          "period": 5,
+          "time": "02:00",
+          "demandMW": 20535.0,
+          "normalised": 60.7
+        },
+        {
+          "period": 6,
+          "time": "02:30",
+          "demandMW": 20167.0,
+          "normalised": 59.6
+        },
+        {
+          "period": 7,
+          "time": "03:00",
+          "demandMW": 20018.0,
+          "normalised": 59.2
+        },
+        {
+          "period": 8,
+          "time": "03:30",
+          "demandMW": 19500.0,
+          "normalised": 57.6
+        },
+        {
+          "period": 9,
+          "time": "04:00",
+          "demandMW": 19069.0,
+          "normalised": 56.3
+        },
+        {
+          "period": 10,
+          "time": "04:30",
+          "demandMW": 19114.0,
+          "normalised": 56.5
+        },
+        {
+          "period": 11,
+          "time": "05:00",
+          "demandMW": 19401.0,
+          "normalised": 57.3
+        },
+        {
+          "period": 12,
+          "time": "05:30",
+          "demandMW": 20261.0,
+          "normalised": 59.9
+        },
+        {
+          "period": 13,
+          "time": "06:00",
+          "demandMW": 22332.0,
+          "normalised": 66.0
+        },
+        {
+          "period": 14,
+          "time": "06:30",
+          "demandMW": 24532.0,
+          "normalised": 72.5
+        },
+        {
+          "period": 15,
+          "time": "07:00",
+          "demandMW": 28010.0,
+          "normalised": 82.8
+        },
+        {
+          "period": 16,
+          "time": "07:30",
+          "demandMW": 29611.0,
+          "normalised": 87.5
+        },
+        {
+          "period": 17,
+          "time": "08:00",
+          "demandMW": 30324.0,
+          "normalised": 89.6
+        },
+        {
+          "period": 18,
+          "time": "08:30",
+          "demandMW": 30272.0,
+          "normalised": 89.5
+        },
+        {
+          "period": 19,
+          "time": "09:00",
+          "demandMW": 30190.0,
+          "normalised": 89.2
+        },
+        {
+          "period": 20,
+          "time": "09:30",
+          "demandMW": 29937.0,
+          "normalised": 88.5
+        },
+        {
+          "period": 21,
+          "time": "10:00",
+          "demandMW": 29829.0,
+          "normalised": 88.1
+        },
+        {
+          "period": 22,
+          "time": "10:30",
+          "demandMW": 29246.0,
+          "normalised": 86.4
+        },
+        {
+          "period": 23,
+          "time": "11:00",
+          "demandMW": 28813.0,
+          "normalised": 85.1
+        },
+        {
+          "period": 24,
+          "time": "11:30",
+          "demandMW": 28833.0,
+          "normalised": 85.2
+        },
+        {
+          "period": 25,
+          "time": "12:00",
+          "demandMW": 28821.0,
+          "normalised": 85.2
+        },
+        {
+          "period": 26,
+          "time": "12:30",
+          "demandMW": 28430.0,
+          "normalised": 84.0
+        },
+        {
+          "period": 27,
+          "time": "13:00",
+          "demandMW": 28089.0,
+          "normalised": 83.0
+        },
+        {
+          "period": 28,
+          "time": "13:30",
+          "demandMW": 27762.0,
+          "normalised": 82.0
+        },
+        {
+          "period": 29,
+          "time": "14:00",
+          "demandMW": 27481.0,
+          "normalised": 81.2
+        },
+        {
+          "period": 30,
+          "time": "14:30",
+          "demandMW": 27952.0,
+          "normalised": 82.6
+        },
+        {
+          "period": 31,
+          "time": "15:00",
+          "demandMW": 28158.0,
+          "normalised": 83.2
+        },
+        {
+          "period": 32,
+          "time": "15:30",
+          "demandMW": 28991.0,
+          "normalised": 85.7
+        },
+        {
+          "period": 33,
+          "time": "16:00",
+          "demandMW": 29416.0,
+          "normalised": 86.9
+        },
+        {
+          "period": 34,
+          "time": "16:30",
+          "demandMW": 30730.0,
+          "normalised": 90.8
+        },
+        {
+          "period": 35,
+          "time": "17:00",
+          "demandMW": 31642.0,
+          "normalised": 93.5
+        },
+        {
+          "period": 36,
+          "time": "17:30",
+          "demandMW": 32396.0,
+          "normalised": 95.7
+        },
+        {
+          "period": 37,
+          "time": "18:00",
+          "demandMW": 32926.0,
+          "normalised": 97.3
+        },
+        {
+          "period": 38,
+          "time": "18:30",
+          "demandMW": 33510.0,
+          "normalised": 99.0
+        },
+        {
+          "period": 39,
+          "time": "19:00",
+          "demandMW": 33842.0,
+          "normalised": 100.0
+        },
+        {
+          "period": 40,
+          "time": "19:30",
+          "demandMW": 32378.0,
+          "normalised": 95.7
+        },
+        {
+          "period": 41,
+          "time": "20:00",
+          "demandMW": 30955.0,
+          "normalised": 91.5
+        },
+        {
+          "period": 42,
+          "time": "20:30",
+          "demandMW": 29460.0,
+          "normalised": 87.1
+        },
+        {
+          "period": 43,
+          "time": "21:00",
+          "demandMW": 28000.0,
+          "normalised": 82.7
+        },
+        {
+          "period": 44,
+          "time": "21:30",
+          "demandMW": 26365.0,
+          "normalised": 77.9
+        },
+        {
+          "period": 45,
+          "time": "22:00",
+          "demandMW": 24948.0,
+          "normalised": 73.7
+        },
+        {
+          "period": 46,
+          "time": "22:30",
+          "demandMW": 23849.0,
+          "normalised": 70.5
+        },
+        {
+          "period": 47,
+          "time": "23:00",
+          "demandMW": 22285.0,
+          "normalised": 65.9
+        },
+        {
+          "period": 48,
+          "time": "23:30",
+          "demandMW": 21241.0,
+          "normalised": 62.8
+        }
+      ],
+      "peakWindow": {
+        "startPeriod": 16,
+        "endPeriod": 42,
+        "startTime": "07:30",
+        "endTime": "21:00"
+      },
+      "label": "Autumn (2024-10-09)"
+    }
+  },
+  "monthlyPeaks": [
+    {
+      "month": "Jan",
+      "avgPeakMW": 44667
+    },
+    {
+      "month": "Feb",
+      "avgPeakMW": 43200
+    },
+    {
+      "month": "Mar",
+      "avgPeakMW": 40100
+    },
+    {
+      "month": "Apr",
+      "avgPeakMW": 34500
+    },
+    {
+      "month": "May",
+      "avgPeakMW": 31200
+    },
+    {
+      "month": "Jun",
+      "avgPeakMW": 28900
+    },
+    {
+      "month": "Jul",
+      "avgPeakMW": 27516
+    },
+    {
+      "month": "Aug",
+      "avgPeakMW": 27100
+    },
+    {
+      "month": "Sep",
+      "avgPeakMW": 30200
+    },
+    {
+      "month": "Oct",
+      "avgPeakMW": 36800
+    },
+    {
+      "month": "Nov",
+      "avgPeakMW": 41500
+    },
+    {
+      "month": "Dec",
+      "avgPeakMW": 43900
+    }
+  ]
+}
