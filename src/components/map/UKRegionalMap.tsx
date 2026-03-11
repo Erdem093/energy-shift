@@ -25,10 +25,8 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
   onRegionSelectRef.current = onRegionSelect;
   const geoJsonRef = useRef<{ type: string; features: GeoFeature[] } | null>(null);
 
-  // Stable lookup — only recreated when data changes
   const regionMap = useMemo(() => new Map(data.regions.map(r => [r.regionId, r])), [data]);
 
-  // Draw map once — never re-fetches on hover/selection
   useEffect(() => {
     const svgEl = svgRef.current;
     const containerEl = containerRef.current;
@@ -48,17 +46,14 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
         .attr('width', width)
         .attr('height', height)
         .attr('fill', '#070d18')
-        .attr('rx', 8);
+        .attr('rx', 6);
 
       const features: GeoFeature[] = geojson.features ?? [];
 
-      // fitExtent auto-calculates scale+translate so all 14 regions fit
-      const projection = d3.geoAlbers()
-        .center([0, 55.4])
-        .rotate([4.4, 0])
-        .parallels([50, 60])
+      // Mercator with fitExtent — reliably fits all 14 DNO regions with no rotation gotchas
+      const projection = d3.geoMercator()
         .fitExtent(
-          [[16, 16], [width - 16, height - 16]],
+          [[12, 12], [width - 12, height - 12]],
           { type: 'FeatureCollection', features } as d3.GeoPermissibleObjects,
         );
 
@@ -66,7 +61,6 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
 
       const g = svg.append('g').attr('class', 'map-g');
 
-      // Region paths
       g.selectAll('path')
         .data(features)
         .enter()
@@ -76,7 +70,7 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
           const region = regionMap.get(d.properties.regionId);
           return region ? ciToColor(region.avgCI) : '#1e293b';
         })
-        .attr('fill-opacity', 0.85)
+        .attr('fill-opacity', 0.8)
         .attr('stroke', '#0a0f1e')
         .attr('stroke-width', 0.8)
         .style('cursor', 'pointer')
@@ -91,7 +85,6 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
           onRegionSelectRef.current(region);
         });
 
-      // Region labels
       g.selectAll('text')
         .data(features)
         .enter()
@@ -124,7 +117,6 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
         });
 
       svg.call(zoom);
-      // Double-click resets zoom
       svg.on('dblclick.zoom', () => {
         svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
       });
@@ -152,7 +144,7 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
       .attr('fill-opacity', (d) => {
         if (selectedRegionId === d.properties.regionId) return 1;
         if (hoveredId === d.properties.regionId) return 0.95;
-        return 0.75;
+        return 0.7;
       })
       .attr('stroke', (d) => {
         if (selectedRegionId === d.properties.regionId) return 'rgba(255,255,255,0.85)';
@@ -167,7 +159,7 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
       .style('filter', (d) => {
         if (selectedRegionId === d.properties.regionId) {
           const region = regionMap.get(d.properties.regionId);
-          const col = region ? ciToColor(region.avgCI) : '#f97316';
+          const col = region ? ciToColor(region.avgCI) : '#00fff5';
           return `drop-shadow(0 0 4px ${col})`;
         }
         return 'none';

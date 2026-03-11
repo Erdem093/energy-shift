@@ -23,10 +23,10 @@ export const FUEL_LABELS: Record<string, string> = {
 };
 
 export const SEASON_COLORS: Record<string, string> = {
-  winter: '#94a3b8',
-  spring: '#a1a1aa',
-  summer: '#d1d5db',
-  autumn: '#f97316',
+  winter: '#60a5fa',
+  spring: '#4ade80',
+  summer: '#fbbf24',
+  autumn: '#fb923c',
 };
 
 export const SEASON_LABELS: Record<string, string> = {
@@ -49,11 +49,11 @@ export const ARCHETYPE_DESCRIPTIONS: Record<string, string> = {
 };
 
 export const CI_INDEX_COLORS: Record<string, string> = {
-  'very low':  '#475569',
-  'low':       '#64748b',
-  'moderate':  '#f97316',
-  'high':      '#f87171',
-  'very high': '#ef4444',
+  'very low':  '#00fff5',
+  'low':       '#22d3ee',
+  'moderate':  '#f59e0b',
+  'high':      '#ef4444',
+  'very high': '#dc2626',
 };
 
 export const TARIFF = {

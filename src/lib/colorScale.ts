@@ -1,20 +1,20 @@
 /**
  * Maps carbon intensity (gCO2/kWh) to a hex colour.
- * 0   → #334155 (dark slate — clean grid)
- * 150 → #f97316 (orange)
+ * 0   → #00fff5 (cyan)
+ * 150 → #f59e0b (amber)
  * 300+→ #ef4444 (red)
  */
 export function ciToColor(gCO2: number): string {
   const v = Math.max(0, Math.min(gCO2, 400));
 
   if (v <= 150) {
-    // dark slate → orange
+    // cyan → amber
     const t = v / 150;
-    return interpolateHex('#334155', '#f97316', t);
+    return interpolateHex('#00fff5', '#f59e0b', t);
   } else {
-    // orange → red
+    // amber → red
     const t = (v - 150) / 250;
-    return interpolateHex('#f97316', '#ef4444', Math.min(t, 1));
+    return interpolateHex('#f59e0b', '#ef4444', Math.min(t, 1));
   }
 }
 

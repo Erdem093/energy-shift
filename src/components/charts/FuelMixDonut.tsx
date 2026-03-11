@@ -54,7 +54,7 @@ export default function FuelMixDonut({ data }: FuelMixDonutProps) {
             className={clsx(
               'px-2.5 py-1 rounded-md text-[11px] font-mono font-medium transition-all duration-150 border',
               view === v
-                ? 'bg-orange-500/15 border-orange-500/40 text-orange-300'
+                ? 'bg-blue-500/15 border-blue-500/40 text-blue-300'
                 : 'bg-[#0c1525] border-[#1a2540] text-slate-500 hover:text-slate-300 hover:border-[#2a3f60]',
             )}
           >
