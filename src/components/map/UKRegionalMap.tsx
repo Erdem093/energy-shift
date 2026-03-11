@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useMemo } from 'react';
 import * as d3 from 'd3';
 import type { RegionalIntensityData, RegionalData } from '@/lib/types';
 import { ciToColor } from '@/lib/colorScale';
+import type { Geometry, MultiPolygon, Polygon, Position } from 'geojson';
 
 interface UKRegionalMapProps {
   data: RegionalIntensityData;
@@ -14,7 +15,55 @@ interface UKRegionalMapProps {
 interface GeoFeature {
   type: string;
   properties: { regionId: number; shortName: string };
-  geometry: object;
+  geometry: Geometry;
+}
+
+const MIN_POLYGON_AREA = 0.015;
+
+function closeRing(ring: Position[]): Position[] {
+  if (ring.length < 3) return ring;
+  const [fx, fy] = ring[0];
+  const [lx, ly] = ring[ring.length - 1];
+  if (fx === lx && fy === ly) return ring;
+  return [...ring, ring[0]];
+}
+
+function orientRing(ring: Position[], clockwise: boolean): Position[] {
+  const closed = closeRing(ring);
+  const area = d3.polygonArea(closed as [number, number][]);
+  const isClockwise = area < 0;
+  return isClockwise === clockwise ? closed : [...closed].reverse();
+}
+
+function normalizePolygon(polygon: Position[][]): Position[][] | null {
+  if (!Array.isArray(polygon) || polygon.length === 0) return null;
+  const outer = polygon[0];
+  if (!outer || outer.length < 4) return null;
+  const outerClosed = closeRing(outer);
+  if (Math.abs(d3.polygonArea(outerClosed as [number, number][])) < MIN_POLYGON_AREA) return null;
+
+  const rings: Position[][] = [orientRing(outerClosed, false)];
+  for (const hole of polygon.slice(1)) {
+    if (!hole || hole.length < 4) continue;
+    rings.push(orientRing(hole, true));
+  }
+  return rings;
+}
+
+function sanitizeGeometry(geometry: Geometry): Geometry | null {
+  if (geometry.type === 'Polygon') {
+    const normalized = normalizePolygon((geometry as Polygon).coordinates);
+    if (!normalized) return null;
+    return { type: 'Polygon', coordinates: normalized };
+  }
+  if (geometry.type === 'MultiPolygon') {
+    const polygons = (geometry as MultiPolygon).coordinates
+      .map((poly) => normalizePolygon(poly))
+      .filter((poly): poly is Position[][] => Boolean(poly));
+    if (polygons.length === 0) return null;
+    return { type: 'MultiPolygon', coordinates: polygons };
+  }
+  return geometry;
 }
 
 export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }: UKRegionalMapProps) {
@@ -48,7 +97,12 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
         .attr('fill', '#070d18')
         .attr('rx', 6);
 
-      const features: GeoFeature[] = geojson.features ?? [];
+      const features: GeoFeature[] = (geojson.features ?? [])
+        .map((feature) => {
+          const geometry = sanitizeGeometry(feature.geometry);
+          return geometry ? { ...feature, geometry } : null;
+        })
+        .filter((feature): feature is GeoFeature => Boolean(feature));
 
       // Mercator with fitExtent — reliably fits all 14 DNO regions with no rotation gotchas
       const projection = d3.geoMercator()
@@ -85,32 +139,9 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
           onRegionSelectRef.current(region);
         });
 
-      g.selectAll('text')
-        .data(features)
-        .enter()
-        .append('text')
-        .attr('transform', (d) => {
-          const centroid = pathGenerator.centroid(d.geometry as d3.GeoPermissibleObjects);
-          return centroid?.[0] && centroid?.[1]
-            ? `translate(${centroid[0]},${centroid[1]})`
-            : 'translate(-9999,-9999)';
-        })
-        .attr('text-anchor', 'middle')
-        .attr('dominant-baseline', 'middle')
-        .attr('font-size', '6.5px')
-        .attr('font-family', 'system-ui, sans-serif')
-        .attr('fill', 'rgba(255,255,255,0.6)')
-        .attr('pointer-events', 'none')
-        .text((d) => {
-          const region = regionMap.get(d.properties.regionId);
-          if (!region) return '';
-          const word = region.shortName.split(' ')[0];
-          return word.length > 9 ? '' : word;
-        });
-
       // Zoom + pan
       const zoom = d3.zoom<SVGSVGElement, unknown>()
-        .scaleExtent([1, 8])
+        .scaleExtent([1, 10])
         .translateExtent([[0, 0], [width, height]])
         .on('zoom', (event) => {
           g.attr('transform', event.transform.toString());
@@ -167,11 +198,11 @@ export default function UKRegionalMap({ data, selectedRegionId, onRegionSelect }
   }, [hoveredId, selectedRegionId, regionMap]);
 
   return (
-    <div ref={containerRef} className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: '140%' }}>
+    <div ref={containerRef} className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: '96%' }}>
       <svg
         ref={svgRef}
         className="absolute inset-0 w-full h-full"
-        style={{ display: 'block' }}
+        style={{ display: 'block', touchAction: 'none' }}
       />
       <div className="absolute bottom-2 right-2 text-[9px] font-mono text-slate-700 pointer-events-none select-none">
         scroll · zoom · drag

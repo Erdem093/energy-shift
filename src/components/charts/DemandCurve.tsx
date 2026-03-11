@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceArea, TooltipProps,
@@ -30,6 +30,20 @@ export default function DemandCurve({ data }: DemandCurveProps) {
   const [activeSeason, setActiveSeason] = useState<Season>('winter');
   const seasonData = data.seasonal[activeSeason];
   const color = SEASON_COLORS[activeSeason];
+  const yStep = 2000;
+
+  const { yDomain, yTicks } = useMemo(() => {
+    const allDemand = SEASONS.flatMap((season) => data.seasonal[season].profile.map((p) => p.demandMW));
+    const minDemand = Math.min(...allDemand);
+    const maxDemand = Math.max(...allDemand);
+    const domainMin = Math.floor(minDemand / yStep) * yStep;
+    const domainMax = Math.ceil(maxDemand / yStep) * yStep;
+    const ticks: number[] = [];
+    for (let tick = domainMin; tick <= domainMax; tick += yStep) {
+      ticks.push(tick);
+    }
+    return { yDomain: [domainMin, domainMax] as [number, number], yTicks: ticks };
+  }, [data]);
 
   const { startTime, endTime } = seasonData.peakWindow;
 
@@ -96,6 +110,8 @@ export default function DemandCurve({ data }: DemandCurveProps) {
             tickLine={false}
           />
           <YAxis
+            domain={yDomain}
+            ticks={yTicks}
             tickFormatter={v => `${(v / 1000).toFixed(0)}GW`}
             tick={{ fill: '#475569', fontSize: 10, fontFamily: 'var(--font-fira)' }}
             axisLine={false}

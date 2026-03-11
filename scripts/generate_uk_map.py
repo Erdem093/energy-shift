@@ -9,6 +9,7 @@ Outputs: ../public/data/uk_dno_regions.json
 import json
 import math
 import requests
+from typing import Optional
 from pathlib import Path
 
 OUTPUT_PATH = Path(__file__).parent.parent / "public" / "data" / "uk_dno_regions.json"
@@ -24,7 +25,7 @@ NUTS1_TO_CI = {
     "UKG": {"regionId": 8, "shortName": "West Midlands"},
     "UKH": {"regionId": 10, "shortName": "East England"},
     "UKI": {"regionId": 13, "shortName": "London"},
-    "UKJ": {"regionId": 14, "shortName": "South East England"},
+    # UKJ is split into South England (12) and South East England (14)
     "UKK": {"regionId": 11, "shortName": "South West England"},
     "UKL": {"regionId": 7,  "shortName": "South Wales"},
     "UKM": {"regionId": 2,  "shortName": "South Scotland"},
@@ -60,79 +61,130 @@ def simplify_ring(ring: list, tolerance: float) -> list:
     result.append(ring[-1])
     return result if len(result) >= 4 else ring
 
+def ensure_closed(ring: list) -> list:
+    if len(ring) < 3:
+        return ring
+    if ring[0] == ring[-1]:
+        return ring
+    return ring + [ring[0]]
+
+def clip_ring_half_plane(ring: list, is_inside, intersect) -> list:
+    """Sutherland-Hodgman ring clipping against a single half-plane."""
+    pts = ensure_closed(ring)
+    if len(pts) < 4:
+        return []
+    output = []
+    prev = pts[-1]
+    prev_inside = is_inside(prev)
+    for curr in pts:
+        curr_inside = is_inside(curr)
+        if curr_inside:
+            if not prev_inside:
+                output.append(intersect(prev, curr))
+            output.append(curr)
+        elif prev_inside:
+            output.append(intersect(prev, curr))
+        prev = curr
+        prev_inside = curr_inside
+    if len(output) < 3:
+        return []
+    output = ensure_closed(output)
+    return output if len(output) >= 4 else []
+
+def clip_geometry_by_lat(geometry: dict, split_lat: float, keep_north: bool) -> Optional[dict]:
+    def is_inside(pt):
+        return pt[1] >= split_lat if keep_north else pt[1] <= split_lat
+
+    def intersect(a, b):
+        ay, by = a[1], b[1]
+        if by == ay:
+            return [b[0], split_lat]
+        t = (split_lat - ay) / (by - ay)
+        return [a[0] + t * (b[0] - a[0]), split_lat]
+
+    def clip_polygon(polygon):
+        if not polygon:
+            return None
+        outer = clip_ring_half_plane(polygon[0], is_inside, intersect)
+        if not outer:
+            return None
+        holes = []
+        for hole in polygon[1:]:
+            clipped = clip_ring_half_plane(hole, is_inside, intersect)
+            if clipped:
+                holes.append(clipped)
+        return [outer] + holes
+
+    if geometry["type"] == "Polygon":
+        poly = clip_polygon(geometry["coordinates"])
+        return {"type": "Polygon", "coordinates": poly} if poly else None
+    if geometry["type"] == "MultiPolygon":
+        polys = []
+        for poly in geometry["coordinates"]:
+            clipped = clip_polygon(poly)
+            if clipped:
+                polys.append(clipped)
+        if not polys:
+            return None
+        return {"type": "MultiPolygon", "coordinates": polys}
+    return None
+
+def clip_geometry_by_lon(geometry: dict, split_lon: float, keep_east: bool) -> Optional[dict]:
+    def is_inside(pt):
+        return pt[0] >= split_lon if keep_east else pt[0] <= split_lon
+
+    def intersect(a, b):
+        ax, bx = a[0], b[0]
+        if bx == ax:
+            return [split_lon, b[1]]
+        t = (split_lon - ax) / (bx - ax)
+        return [split_lon, a[1] + t * (b[1] - a[1])]
+
+    def clip_polygon(polygon):
+        if not polygon:
+            return None
+        outer = clip_ring_half_plane(polygon[0], is_inside, intersect)
+        if not outer:
+            return None
+        holes = []
+        for hole in polygon[1:]:
+            clipped = clip_ring_half_plane(hole, is_inside, intersect)
+            if clipped:
+                holes.append(clipped)
+        return [outer] + holes
+
+    if geometry["type"] == "Polygon":
+        poly = clip_polygon(geometry["coordinates"])
+        return {"type": "Polygon", "coordinates": poly} if poly else None
+    if geometry["type"] == "MultiPolygon":
+        polys = []
+        for poly in geometry["coordinates"]:
+            clipped = clip_polygon(poly)
+            if clipped:
+                polys.append(clipped)
+        if not polys:
+            return None
+        return {"type": "MultiPolygon", "coordinates": polys}
+    return None
+
 def split_scotland(geometry: dict) -> tuple[dict, dict]:
     """
     Split Scotland geometry at latitude ~56.5 into North and South Scotland.
     Returns (north_geometry, south_geometry).
     """
     split_lat = 56.5
-
-    def filter_coords(coords: list, north: bool) -> list:
-        """Keep coordinates above/below split_lat."""
-        result = []
-        for coord in coords:
-            if north and coord[1] >= split_lat:
-                result.append(coord)
-            elif not north and coord[1] < split_lat:
-                result.append(coord)
-        return result if len(result) >= 4 else coords
-
-    def split_geom(geom: dict, north: bool) -> dict:
-        if geom["type"] == "Polygon":
-            new_coords = []
-            for ring in geom["coordinates"]:
-                filtered = filter_coords(ring, north)
-                if len(filtered) >= 4:
-                    new_coords.append(filtered)
-            if not new_coords:
-                new_coords = geom["coordinates"]  # fallback
-            return {"type": "Polygon", "coordinates": new_coords}
-        elif geom["type"] == "MultiPolygon":
-            polys = []
-            for poly in geom["coordinates"]:
-                new_rings = []
-                for ring in poly:
-                    filtered = filter_coords(ring, north)
-                    if len(filtered) >= 4:
-                        new_rings.append(filtered)
-                if new_rings:
-                    polys.append(new_rings)
-            if not polys:
-                polys = geom["coordinates"]
-            return {"type": "MultiPolygon", "coordinates": polys}
-        return geom
-
-    return split_geom(geometry, north=True), split_geom(geometry, north=False)
+    north = clip_geometry_by_lat(geometry, split_lat, keep_north=True) or geometry
+    south = clip_geometry_by_lat(geometry, split_lat, keep_north=False) or geometry
+    return north, south
 
 def split_wales(geometry: dict) -> tuple[dict, dict]:
     """
     Split Wales at latitude ~52.4 into North Wales (CI 6) and South Wales (CI 7).
     """
     split_lat = 52.4
-
-    def split_geom(geom: dict, north: bool) -> dict:
-        if geom["type"] == "Polygon":
-            new_coords = []
-            for ring in geom["coordinates"]:
-                filtered = [c for c in ring if (c[1] >= split_lat) == north]
-                if len(filtered) >= 4:
-                    new_coords.append(filtered)
-            if not new_coords:
-                new_coords = geom["coordinates"]
-            return {"type": "Polygon", "coordinates": new_coords}
-        elif geom["type"] == "MultiPolygon":
-            polys = []
-            for poly in geom["coordinates"]:
-                new_rings = [[c for c in ring if (c[1] >= split_lat) == north] for ring in poly]
-                valid = [r for r in new_rings if len(r) >= 4]
-                if valid:
-                    polys.append(valid)
-            if not polys:
-                polys = geom["coordinates"]
-            return {"type": "MultiPolygon", "coordinates": polys}
-        return geom
-
-    return split_geom(geometry, north=True), split_geom(geometry, north=False)
+    north = clip_geometry_by_lat(geometry, split_lat, keep_north=True) or geometry
+    south = clip_geometry_by_lat(geometry, split_lat, keep_north=False) or geometry
+    return north, south
 
 def create_synthetic_south_england(south_east_geometry: dict) -> dict:
     """
@@ -147,6 +199,17 @@ def create_synthetic_south_england(south_east_geometry: dict) -> dict:
             [-2.0, 50.6], [-2.8, 51.0], [-2.0, 51.8],
         ]],
     }
+
+def split_south_east(geometry: dict) -> tuple[dict, dict]:
+    """
+    Split NUTS1 South East England (UKJ) into:
+    - South England (12): western side
+    - South East England (14): eastern side
+    """
+    split_lon = -0.4
+    south_england = clip_geometry_by_lon(geometry, split_lon, keep_east=False) or geometry
+    south_east = clip_geometry_by_lon(geometry, split_lon, keep_east=True) or geometry
+    return south_england, south_east
 
 def create_north_wales_mersey(north_wales_geometry: dict) -> dict:
     """
@@ -221,6 +284,18 @@ def main():
                 "properties": {"regionId": 7, "shortName": "South Wales", "nutsId": "UKL_S"},
                 "geometry": south_geom,
             })
+        elif nuts_id == "UKJ":
+            south_eng_geom, south_east_geom = split_south_east(geom)
+            output_features.append({
+                "type": "Feature",
+                "properties": {"regionId": 12, "shortName": "South England", "nutsId": "UKJ_W"},
+                "geometry": south_eng_geom,
+            })
+            output_features.append({
+                "type": "Feature",
+                "properties": {"regionId": 14, "shortName": "South East England", "nutsId": "UKJ_E"},
+                "geometry": south_east_geom,
+            })
         elif nuts_id in NUTS1_TO_CI:
             ci = NUTS1_TO_CI[nuts_id]
             output_features.append({
@@ -232,20 +307,6 @@ def main():
                 },
                 "geometry": geom,
             })
-
-    # Add synthetic South England (CI 12) if South East exists
-    se_feature = next((f for f in output_features if f["properties"]["regionId"] == 14), None)
-    output_features.append({
-        "type": "Feature",
-        "properties": {"regionId": 12, "shortName": "South England", "nutsId": "UKJ_W"},
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[
-                [-2.0, 51.8], [-0.8, 51.8], [0.2, 51.4], [0.0, 50.8],
-                [-1.8, 50.5], [-2.8, 51.0], [-2.0, 51.8],
-            ]],
-        },
-    })
 
     output_geojson = {
         "type": "FeatureCollection",

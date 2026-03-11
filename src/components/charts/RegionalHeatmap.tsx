@@ -43,7 +43,7 @@ export default function RegionalHeatmap({ data, onRegionSelect, selectedRegionId
         <BarChart
           data={chartData}
           layout="vertical"
-          margin={{ top: 0, right: 20, left: 8, bottom: 0 }}
+          margin={{ top: 0, right: 20, left: 8, bottom: 12 }}
           onClick={(e) => {
             if (e?.activePayload?.[0]?.payload?.regionId) {
               onRegionSelect?.(e.activePayload[0].payload.regionId);
@@ -57,7 +57,6 @@ export default function RegionalHeatmap({ data, onRegionSelect, selectedRegionId
             axisLine={{ stroke: '#1e293b' }}
             tickLine={false}
             tickFormatter={v => `${v}`}
-            label={{ value: 'gCO₂/kWh', position: 'insideBottomRight', offset: -5, fill: '#475569', fontSize: 10 }}
           />
           <YAxis
             type="category"
@@ -80,6 +79,7 @@ export default function RegionalHeatmap({ data, onRegionSelect, selectedRegionId
           </Bar>
         </BarChart>
       </ResponsiveContainer>
+      <p className="text-[10px] text-slate-600 -mt-0.5 text-right">gCO₂/kWh</p>
       <p className="text-xs text-slate-600 mt-1 text-right">Source: Carbon Intensity API · 4 seasonal days</p>
     </div>
   );

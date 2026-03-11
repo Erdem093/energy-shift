@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import type { RegionalIntensityData, NationalDemandData, FuelMixData, IncentiveModelData, RegionalData } from '@/lib/types';
 import GlassCard from '@/components/ui/GlassCard';
@@ -45,6 +46,7 @@ export default function Home() {
   const [incentiveData, setIncentiveData] = useState<IncentiveModelData | null>(null);
   const [selectedRegion, setSelectedRegion] = useState<RegionalData | null>(null);
   const [selectedRegionId, setSelectedRegionId] = useState<number | null>(null);
+  const [isRegionPanelCollapsed, setIsRegionPanelCollapsed] = useState(false);
 
   useEffect(() => {
     Promise.all([
@@ -63,6 +65,7 @@ export default function Home() {
   const handleRegionSelect = (region: RegionalData | null) => {
     setSelectedRegion(region);
     setSelectedRegionId(region?.regionId ?? null);
+    if (region) setIsRegionPanelCollapsed(false);
   };
 
   const handleHeatmapSelect = (regionId: number) => {
@@ -70,6 +73,7 @@ export default function Home() {
     const region = regionalData.regions.find(r => r.regionId === regionId) ?? null;
     setSelectedRegion(region);
     setSelectedRegionId(regionId);
+    setIsRegionPanelCollapsed(false);
   };
 
   const peakSaving = incentiveData
@@ -86,57 +90,68 @@ export default function Home() {
 
         {/* ── Hero ── */}
         <section className="pt-10 pb-4">
-          <div className="inline-flex items-center gap-2 border border-[#1a2540] bg-[#070d18] rounded-full px-4 py-1.5 text-[10px] font-mono text-slate-500 mb-6 tracking-wider uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-pulse flex-shrink-0" />
-            Real-time · Carbon Intensity API · Elexon BMRS
-          </div>
-
-          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-4 leading-none">
-            UK Energy
-            <br />
-            <span className="text-slate-300">Demand Shift</span>
-          </h1>
-
-          <p className="text-slate-400 text-base max-w-xl mb-8 leading-relaxed">
-            Analysing when British households use electricity, the carbon cost of peak demand,
-            and what financial incentive it takes to change behaviour.
-          </p>
-
-          {/* Key stats row */}
-          <div className="flex flex-wrap gap-px border border-[#1a2540] rounded-xl overflow-hidden w-fit bg-[#1a2540] mb-8">
-            {[
-              { value: '44.7', unit: 'GW', label: 'winter peak', color: 'text-white' },
-              { value: '5×', unit: '', label: 'price differential', color: 'text-white' },
-              { value: '£190', unit: '/yr', label: 'max saving', color: 'text-white' },
-              { value: '14', unit: '', label: 'DNO regions', color: 'text-slate-400' },
-            ].map(s => (
-              <div key={s.label} className="bg-[#070d18] px-5 py-3 text-center min-w-[90px]">
-                <p className={`font-mono font-bold text-xl tabular-nums ${s.color}`}>
-                  {s.value}<span className="text-xs font-normal">{s.unit}</span>
-                </p>
-                <p className="text-[10px] text-slate-600 uppercase tracking-wider mt-0.5">{s.label}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 border border-[#1a2540] bg-[#070d18] rounded-full px-4 py-1.5 text-[10px] font-mono text-slate-500 mb-6 tracking-wider uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-pulse flex-shrink-0" />
+                Real-time · Carbon Intensity API · Elexon BMRS
               </div>
-            ))}
-          </div>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2">
-            {['Half-hourly data', '4 seasonal profiles', 'Interactive incentive model', 'Agile Octopus tariff'].map(tag => (
-              <span key={tag} className="text-[10px] font-mono border border-[#1a2540] text-slate-500 rounded-full px-3 py-1 bg-[#070d18]">
-                {tag}
-              </span>
-            ))}
+              <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-4 leading-none">
+                UK Energy
+                <br />
+                <span className="text-slate-300">Demand Shift</span>
+              </h1>
+
+              <p className="text-slate-400 text-base max-w-xl mb-8 leading-relaxed">
+                Analysing when British households use electricity, the carbon cost of peak demand,
+                and what financial incentive it takes to change behaviour.
+              </p>
+
+              {/* Key stats row */}
+              <div className="flex flex-wrap gap-px border border-[#1a2540] rounded-xl overflow-hidden w-fit bg-[#1a2540] mb-8">
+                {[
+                  { value: '44.7', unit: 'GW', label: 'winter peak', color: 'text-white' },
+                  { value: '5×', unit: '', label: 'price differential', color: 'text-white' },
+                  { value: '£190', unit: '/yr', label: 'max saving', color: 'text-white' },
+                  { value: '14', unit: '', label: 'DNO regions', color: 'text-slate-400' },
+                ].map(s => (
+                  <div key={s.label} className="bg-[#070d18] px-5 py-3 text-center min-w-[90px]">
+                    <p className={`font-mono font-bold text-xl tabular-nums ${s.color}`}>
+                      {s.value}<span className="text-xs font-normal">{s.unit}</span>
+                    </p>
+                    <p className="text-[10px] text-slate-600 uppercase tracking-wider mt-0.5">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {['Half-hourly data', '4 seasonal profiles', 'Interactive incentive model', 'Agile Octopus tariff'].map(tag => (
+                  <span key={tag} className="text-[10px] font-mono border border-[#1a2540] text-slate-500 rounded-full px-3 py-1 bg-[#070d18]">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {fuelData && (
+              <GlassCard className="p-4 lg:mt-10" glow="none">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-3">
+                  GB Generation Mix
+                </div>
+                <FuelMixDonut data={fuelData} />
+              </GlassCard>
+            )}
           </div>
         </section>
 
         {/* ── Map + Fuel Mix ── */}
-        {regionalData && fuelData && (
+        {regionalData && (
           <section>
             <SectionLabel index="// 01" label="Regional Carbon Intensity" />
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4">
-
-              {/* Map card */}
-              <GlassCard className="p-4" glow="none">
+            <GlassCard className="p-4" glow="none">
+              <div className="relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     14 DNO Regions · Annual average
@@ -149,22 +164,62 @@ export default function Home() {
                   onRegionSelect={handleRegionSelect}
                 />
                 <MapLegend />
-              </GlassCard>
-
-              {/* Right sidebar: Fuel Mix on top, Region Tooltip below */}
-              <div className="flex flex-col gap-4">
-                <GlassCard className="p-4" glow="none">
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-3">
-                    GB Generation Mix
+                <AnimatePresence mode="wait">
+                  {selectedRegion && !isRegionPanelCollapsed && (
+                    <motion.div
+                      key="region-panel"
+                      initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.97 }}
+                      transition={{ duration: 0.2, ease: 'easeOut' }}
+                      className="absolute right-3 bottom-8 z-10 w-full max-w-[320px] bg-[#0c1525]/95 border border-[#1a2540] rounded-xl overflow-hidden backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.45)] max-h-[68%] overflow-y-auto"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setIsRegionPanelCollapsed(true)}
+                        className="absolute top-2 right-2 z-20 h-7 w-7 rounded-md border border-[#2a3f60] bg-[#070d18]/80 text-slate-400 hover:text-slate-200 hover:border-[#3a5378] transition-colors"
+                        aria-label="Collapse region details"
+                      >
+                        <svg className="w-4 h-4 mx-auto" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8">
+                          <path d="M4 7l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </button>
+                      <RegionTooltip region={selectedRegion} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <AnimatePresence>
+                  {selectedRegion && isRegionPanelCollapsed && (
+                    <motion.button
+                      key="region-panel-expand"
+                      type="button"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 6 }}
+                      transition={{ duration: 0.18, ease: 'easeOut' }}
+                      onClick={() => setIsRegionPanelCollapsed(false)}
+                      className="absolute right-3 bottom-8 z-10 flex items-center gap-2 text-[10px] font-mono text-slate-300 bg-[#0c1525]/92 border border-[#2a3f60] rounded-lg px-3 py-1.5 hover:border-[#3a5378] transition-colors"
+                    >
+                      <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8">
+                        <path d="M4 13l6-6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      Show details
+                    </motion.button>
+                  )}
+                </AnimatePresence>
+                {!selectedRegion && (
+                  <div className="absolute right-3 bottom-8 z-10 hidden sm:flex items-center gap-2 text-[10px] font-mono text-slate-500 bg-[#0c1525]/90 border border-[#1a2540] rounded-lg px-3 py-1.5 pointer-events-none">
+                    Click a region for details
                   </div>
-                  <FuelMixDonut data={fuelData} />
-                </GlassCard>
-                <div className="bg-[#0c1525] border border-[#1a2540] rounded-xl overflow-hidden flex-1">
-                  <RegionTooltip region={selectedRegion} />
-                </div>
+                )}
               </div>
-
-            </div>
+              <div className="mt-3 sm:hidden bg-[#0c1525] border border-[#1a2540] rounded-xl overflow-hidden">
+                <div className="text-[10px] font-mono text-slate-600 px-3 pt-2">
+                  Tap a region for details
+                </div>
+                <RegionTooltip region={selectedRegion} />
+              </div>
+            </GlassCard>
           </section>
         )}
 
