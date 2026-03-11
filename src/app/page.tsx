@@ -330,6 +330,25 @@ export default function Home() {
             <span>·</span>
             <span>Agile Octopus indicative tariff</span>
           </div>
+          <div className="flex items-center gap-3 text-[10px] font-mono text-slate-600 mt-2">
+            <a
+              href="https://github.com/Erdem093"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-300 transition-colors"
+            >
+              GitHub
+            </a>
+            <span>·</span>
+            <a
+              href="https://www.linkedin.com/in/erdem-arslan-b61a992a7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-300 transition-colors"
+            >
+              LinkedIn
+            </a>
+          </div>
           <p className="text-[10px] text-slate-800 font-mono mt-1">
             Built to model the analytical case for time-of-use tariff adoption in GB households
           </p>

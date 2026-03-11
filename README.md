@@ -2,6 +2,10 @@
 
 Interactive Next.js dashboard for UK electricity demand behavior analysis.
 
+## Live Demo
+
+- https://energy-shift-5jjd848ch-erdem093s-projects.vercel.app/
+
 The app visualizes:
 - UK regional carbon intensity (14 DNO regions) on an interactive map
 - National demand curves by season
@@ -69,3 +73,8 @@ using:
 - The map supports zoom, pan, and region selection.
 - Region details can be expanded/collapsed from the map overlay.
 - Seasonal demand chart now uses a shared Y-axis scale across seasons for accurate comparison.
+
+## Links
+
+- GitHub: https://github.com/Erdem093
+- LinkedIn: https://www.linkedin.com/in/erdem-arslan-b61a992a7/
