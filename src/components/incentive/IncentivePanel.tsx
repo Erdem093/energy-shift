@@ -35,45 +35,45 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
   return (
     <div className="space-y-6">
       {/* Tariff context */}
-      <div className="flex gap-4 flex-wrap text-xs">
-        <div className="bg-slate-800/60 border border-slate-700/40 rounded-lg px-3 py-2">
-          <span className="text-slate-500">Peak rate </span>
-          <span className="text-red-400 font-semibold">{TARIFF.peakRate}p/kWh</span>
-          <span className="text-slate-600"> ({TARIFF.peakWindow})</span>
+      <div className="flex gap-2 flex-wrap text-xs">
+        <div className="bg-[#0c1525] border border-[#1a2540] rounded-lg px-3 py-2">
+          <span className="text-slate-600">Peak </span>
+          <span className="font-mono font-semibold text-red-400">{TARIFF.peakRate}p/kWh</span>
+          <span className="text-slate-700 font-mono"> {TARIFF.peakWindow}</span>
         </div>
-        <div className="bg-slate-800/60 border border-slate-700/40 rounded-lg px-3 py-2">
-          <span className="text-slate-500">Off-peak rate </span>
-          <span className="text-cyan-400 font-semibold">{TARIFF.offpeakRate}p/kWh</span>
-          <span className="text-slate-600"> ({TARIFF.offpeakWindow})</span>
+        <div className="bg-[#0c1525] border border-[#1a2540] rounded-lg px-3 py-2">
+          <span className="text-slate-600">Off-peak </span>
+          <span className="font-mono font-semibold text-emerald-400">{TARIFF.offpeakRate}p/kWh</span>
+          <span className="text-slate-700 font-mono"> {TARIFF.offpeakWindow}</span>
         </div>
-        <div className="bg-slate-800/60 border border-slate-700/40 rounded-lg px-3 py-2">
-          <span className="text-slate-500">Tariff </span>
-          <span className="text-slate-300 font-medium">{data.tariff.name}</span>
+        <div className="bg-[#0c1525] border border-[#1a2540] rounded-lg px-3 py-2">
+          <span className="text-slate-600">Tariff </span>
+          <span className="font-mono text-slate-400">{data.tariff.name}</span>
         </div>
       </div>
 
       {/* Archetype selector */}
       <div>
-        <p className="text-xs text-slate-500 mb-3 uppercase tracking-wider">Your household profile</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-600 mb-3">Household profile</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {ARCHETYPES.map((a) => (
             <button
               key={a}
               onClick={() => setArchetype(a)}
               className={clsx(
-                'text-left p-4 rounded-xl border transition-all duration-200',
+                'text-left p-4 rounded-xl border-l-2 border border-[#1a2540] transition-all duration-200',
                 archetype === a
-                  ? 'bg-cyan-500/10 border-cyan-400/50 shadow-[0_0_20px_rgba(0,255,245,0.08)]'
-                  : 'bg-slate-800/40 border-slate-700/40 hover:border-slate-600/60 hover:bg-slate-800/60',
+                  ? 'bg-[#0c1a2e] border-l-blue-500 border-[#1a2540]'
+                  : 'bg-[#0c1525] border-l-transparent hover:border-l-[#2a3f60] hover:border-[#243556]',
               )}
             >
-              <p className={clsx('font-semibold text-sm mb-1', archetype === a ? 'text-cyan-300' : 'text-slate-300')}>
+              <p className={clsx('font-semibold text-sm mb-1', archetype === a ? 'text-blue-300' : 'text-slate-400')}>
                 {ARCHETYPE_LABELS[a]}
               </p>
-              <p className="text-xs text-slate-500">{ARCHETYPE_DESCRIPTIONS[a]}</p>
-              <p className="text-xs mt-2">
-                <span className="text-slate-600">Baseline: </span>
-                <span className={archetype === a ? 'text-cyan-400' : 'text-slate-400'}>
+              <p className="text-xs text-slate-600">{ARCHETYPE_DESCRIPTIONS[a]}</p>
+              <p className="text-xs mt-2 font-mono">
+                <span className="text-slate-700">Baseline: </span>
+                <span className={archetype === a ? 'text-blue-400' : 'text-slate-500'}>
                   £{data.archetypes[a].baselineCostGbp.toFixed(0)}/yr
                 </span>
               </p>
@@ -85,8 +85,8 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
       {/* Slider */}
       <div>
         <div className="flex justify-between items-end mb-3">
-          <p className="text-xs text-slate-500 uppercase tracking-wider">Peak load shifted to off-peak</p>
-          <span className="text-2xl font-bold text-cyan-400 tabular-nums">{shiftPct}%</span>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-600">Peak load shifted to off-peak</p>
+          <span className="text-2xl font-mono font-bold text-blue-400 tabular-nums">{shiftPct}%</span>
         </div>
 
         <input
@@ -98,22 +98,22 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
           onChange={(e) => setShiftPct(Number(e.target.value))}
           className="w-full"
           style={{
-            background: `linear-gradient(to right, #00fff5 0%, #00fff5 ${shiftPct}%, #1e293b ${shiftPct}%, #1e293b 100%)`,
+            background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${shiftPct}%, #0c1525 ${shiftPct}%, #0c1525 100%)`,
           }}
         />
 
-        <div className="flex justify-between text-xs text-slate-600 mt-1">
-          <span>0% (no change)</span>
-          <span>50% (smart home)</span>
-          <span>100% (full automation)</span>
+        <div className="flex justify-between font-mono text-[10px] text-slate-700 mt-1.5">
+          <span>0% · no change</span>
+          <span>50% · smart home</span>
+          <span>100% · full auto</span>
         </div>
 
-        <p className="mt-3 text-sm text-slate-400 italic min-h-[20px]">
+        <p className="mt-3 text-sm text-slate-500 italic min-h-[20px]">
           {description}
           {shiftedKwhDay > 0 && (
-            <span className="text-slate-600 not-italic">
+            <span className="text-slate-600 not-italic font-mono">
               {' '}—{' '}
-              <span className="text-cyan-500">{shiftedKwhDay.toFixed(2)} kWh/day</span> moved off-peak
+              <span className="text-blue-400">{shiftedKwhDay.toFixed(2)} kWh/day</span> moved off-peak
             </span>
           )}
         </p>
@@ -134,7 +134,7 @@ export default function IncentivePanel({ data }: IncentivePanelProps) {
         />
       </div>
 
-      <p className="text-xs text-slate-600 border-t border-slate-800 pt-3">
+      <p className="font-mono text-[10px] text-slate-700 border-t border-[#1a2540] pt-3">
         Based on Agile Octopus indicative tariff rates. Grid impact assumes 10% adoption across 28M UK households.
         CO₂ savings use peak (250 gCO₂/kWh) vs off-peak (95 gCO₂/kWh) marginal intensity values from Carbon Intensity API data.
       </p>

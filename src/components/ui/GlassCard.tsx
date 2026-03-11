@@ -10,27 +10,28 @@ interface GlassCardProps {
   titleRight?: React.ReactNode;
 }
 
-const glowStyles = {
-  cyan:  'border-cyan-500/15 hover:border-cyan-400/30',
-  amber: 'border-amber-500/15 hover:border-amber-400/30',
-  red:   'border-red-500/15',
-  green: 'border-green-500/15 hover:border-green-400/30',
-  none:  'border-slate-700/40',
+const accentBorders: Record<string, string> = {
+  cyan:  'border-l-cyan-500/50',
+  amber: 'border-l-amber-500/50',
+  red:   'border-l-red-500/50',
+  green: 'border-l-emerald-500/50',
+  none:  'border-l-[#1a2540]',
 };
 
-export default function GlassCard({ children, className, glow = 'cyan', title, titleRight }: GlassCardProps) {
+export default function GlassCard({ children, className, glow = 'none', title, titleRight }: GlassCardProps) {
   return (
     <div
       className={clsx(
-        'bg-slate-900/60 backdrop-blur-xl border rounded-2xl transition-all duration-300',
-        glowStyles[glow],
+        'bg-[#070d18] border border-[#1a2540] border-l-2 rounded-xl',
+        'transition-colors duration-200 hover:border-[#243556]',
+        accentBorders[glow],
         className,
       )}
     >
       {title && (
-        <div className="flex items-center justify-between px-6 pt-5 pb-0 mb-4">
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-400">{title}</h3>
-          {titleRight && <div className="text-slate-400">{titleRight}</div>}
+        <div className="flex items-center justify-between px-5 pt-4 pb-0 mb-3">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">{title}</span>
+          {titleRight && <div className="text-slate-500 text-xs">{titleRight}</div>}
         </div>
       )}
       {children}

@@ -16,9 +16,9 @@ function CustomTooltip({ active, payload }: TooltipProps<number, string>) {
   if (!active || !payload?.length) return null;
   const item = payload[0];
   return (
-    <div className="bg-slate-900/95 border border-slate-700/60 rounded-lg px-3 py-2 text-xs shadow-xl">
+    <div className="bg-[#070d18] border border-[#1a2540] rounded-lg px-3 py-2 text-xs shadow-xl">
       <p className="font-semibold mb-0.5" style={{ color: item.payload.color }}>{item.payload.label}</p>
-      <p className="text-slate-300">{item.value?.toFixed(1)}%</p>
+      <p className="font-mono text-slate-300">{item.value?.toFixed(1)}%</p>
     </div>
   );
 }
@@ -52,10 +52,10 @@ export default function FuelMixDonut({ data }: FuelMixDonutProps) {
             key={v}
             onClick={() => setView(v)}
             className={clsx(
-              'px-2.5 py-1 rounded-md text-xs font-medium transition-all border',
+              'px-2.5 py-1 rounded-md text-[11px] font-mono font-medium transition-all duration-150 border',
               view === v
-                ? 'bg-cyan-500/20 border-cyan-500/40 text-cyan-300'
-                : 'bg-slate-800/60 border-slate-700/40 text-slate-500 hover:text-slate-300',
+                ? 'bg-blue-500/15 border-blue-500/40 text-blue-300'
+                : 'bg-[#0c1525] border-[#1a2540] text-slate-500 hover:text-slate-300 hover:border-[#2a3f60]',
             )}
           >
             {v === 'current' ? 'Today' : SEASON_LABELS[v].split(' ')[0]}
@@ -88,9 +88,9 @@ export default function FuelMixDonut({ data }: FuelMixDonutProps) {
 
         {/* Centre text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <span className="text-2xl font-bold text-cyan-400">{renewables.toFixed(0)}%</span>
-          <span className="text-xs text-slate-500 mt-0.5">renewables</span>
-          <span className="text-xs text-slate-600 mt-0.5">{lowCarbon.toFixed(0)}% low-carbon</span>
+          <span className="text-2xl font-mono font-bold text-emerald-400">{renewables.toFixed(0)}%</span>
+          <span className="text-[10px] text-slate-500 mt-0.5 uppercase tracking-wider">renewable</span>
+          <span className="text-[10px] text-slate-600 mt-0.5 font-mono">{lowCarbon.toFixed(0)}% low-C</span>
         </div>
       </div>
 
@@ -98,14 +98,14 @@ export default function FuelMixDonut({ data }: FuelMixDonutProps) {
       <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-3">
         {chartData.slice(0, 8).map(item => (
           <div key={item.name} className="flex items-center gap-2 text-xs">
-            <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
-            <span className="text-slate-400 truncate">{item.label}</span>
-            <span className="ml-auto text-slate-500 tabular-nums">{item.value.toFixed(1)}%</span>
+            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
+            <span className="text-slate-500 truncate">{item.label}</span>
+            <span className="ml-auto font-mono text-slate-600 tabular-nums">{item.value.toFixed(1)}%</span>
           </div>
         ))}
       </div>
 
-      <p className="text-xs text-slate-600 mt-3">Source: Carbon Intensity API · National Grid ESO</p>
+      <p className="font-mono text-[10px] text-slate-700 mt-3">Source: Carbon Intensity API · National Grid ESO</p>
     </div>
   );
 }

@@ -8,19 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-fira)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+      },
       colors: {
-        'slate-950': '#020617',
+        panel: '#070d18',
+        border: '#1a2540',
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
         'spin-slow': 'spin 8s linear infinite',
-      },
-      keyframes: {
-        glow: {
-          '0%': { boxShadow: '0 0 5px rgba(0, 255, 245, 0.3)' },
-          '100%': { boxShadow: '0 0 20px rgba(0, 255, 245, 0.8), 0 0 40px rgba(0, 255, 245, 0.3)' },
-        },
       },
     },
   },

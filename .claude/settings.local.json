@@ -9,7 +9,9 @@
       "Bash(npm install:*)",
       "Bash(ls node_modules/.bin/topojson*)",
       "Bash(curl -sL \"https://cdn.jsdelivr.net/npm/uk-topojson@1.0.0/uk.json\" -o /tmp/uk_test.json)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(npm run:*)",
+      "Bash(git add:*)"
     ]
   }
 }
